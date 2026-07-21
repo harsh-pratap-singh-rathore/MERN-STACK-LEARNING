@@ -1,5 +1,22 @@
 # 🚀 MERN Stack Learning Journey
 
+<div align="center">
+
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React Logo" width="80" height="80"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite Logo" width="80" height="80"/>
+
+  <br/><br/>
+
+  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+  [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  [![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)](https://github.com/harsh-pratap-singh-rathore/MERN-STACK-LEARNING)
+
+</div>
+
+---
+
 Welcome to my **MERN Stack Learning Repository**! This repository tracks my daily progress, code snippets, projects, and hands-on experiments as I master Full-Stack Web Development using **MongoDB, Express.js, React, and Node.js**.
 
 ---
@@ -40,6 +57,13 @@ MERN/
 ## ⚡ Featured Projects
 
 ### 🧮 1. React Counter App (`React/Counter-App`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+</p>
+
 A lightweight interactive counter application built with **React 19** and **Vite**.
 
 * **Key Concepts Covered:**

@@ -26,7 +26,9 @@ Welcome to my **MERN Stack Learning Repository**! This repository tracks my dail
 ```
 MERN/
 ├── React/
-│   └── Counter-App/      # Interactive React Counter application using useState hooks & boundary validation
+│   ├── Counter-App/      # Interactive React Counter application using useState hooks & boundary validation
+│   ├── bg-changer/       # Dynamic background changer utilizing useState and inline styles
+│   └── reactprops/       # Reusable Card components utilizing React props and styled with Tailwind CSS v4
 ├── .gitignore
 └── README.md
 ```
@@ -39,6 +41,9 @@ MERN/
   - [x] Components & JSX syntax
   - [x] Managing state with `useState`
   - [x] Event Handling & Conditionals
+  - [x] Component Reusability & Props
+  - [x] Basic & Inline CSS styling
+  - [x] Tailwind CSS v4 integration
 - [ ] **Advanced React**
   - [ ] `useEffect`, `useContext`, `useReducer` hooks
   - [ ] Routing with React Router
@@ -80,6 +85,60 @@ npm run dev
 ```
 
 ---
+
+### 🎨 2. Background Changer App (`React/bg-changer`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="30" height="30"/>
+</p>
+
+A fully interactive background color switching web application. It showcases state management alongside basic inline CSS styling.
+
+* **Key Concepts Covered:**
+  * React state updates on user interaction (`useState`).
+  * Inline styles in JSX (`style={{ backgroundColor: color }}`).
+  * Event listener registration in React (`onClick`).
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/bg-changer
+npm install
+npm run dev
+```
+
+---
+
+### 🎴 3. Reusable Cards with Props (`React/reactprops`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" width="30" height="30"/>
+</p>
+
+A project that demonstrates component reusability. It passes distinct parameters (subject, description, rating) to a shared Card component using custom props. The UI is beautifully structured and styled with **Tailwind CSS v4**.
+
+* **Key Concepts Covered:**
+  * Designing custom reusable React components.
+  * Reading and executing parameters using `props` in React functional components.
+  * Configuring Tailwind CSS v4 with Vite integration (`@tailwindcss/vite`).
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/reactprops
+npm install
+npm run dev
+```
 
 ## 🛠️ Tech Stack & Tools
 

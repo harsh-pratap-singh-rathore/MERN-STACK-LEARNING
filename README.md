@@ -28,6 +28,7 @@ MERN/
 ├── React/
 │   ├── Counter-App/      # Interactive React Counter application using useState hooks & boundary validation
 │   ├── bg-changer/       # Dynamic background changer utilizing useState and inline styles
+│   ├── password-generator/# SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
 │   └── reactprops/       # Reusable Card components utilizing React props and styled with Tailwind CSS v4
 ├── .gitignore
 └── README.md
@@ -44,8 +45,12 @@ MERN/
   - [x] Component Reusability & Props
   - [x] Basic & Inline CSS styling
   - [x] Tailwind CSS v4 integration
+- [x] **Hooks & Optimization**
+  - [x] Side effects & dependency arrays (`useEffect`)
+  - [x] DOM references (`useRef`)
+  - [x] Callback memoization (`useCallback`)
 - [ ] **Advanced React**
-  - [ ] `useEffect`, `useContext`, `useReducer` hooks
+  - [ ] Context API (`useContext`) & `useReducer`
   - [ ] Routing with React Router
   - [ ] State Management (Redux Toolkit / Zustand)
 - [ ] **Node.js & Express.js**
@@ -136,6 +141,36 @@ A project that demonstrates component reusability. It passes distinct parameters
 
 ```bash
 cd React/reactprops
+npm install
+npm run dev
+```
+
+---
+
+### 🔑 4. SecureKey Password Generator (`React/password-generator`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="30" height="30"/>
+</p>
+
+An elegant, glassmorphic password utility designed to generate highly secure random keys with visual validation.
+
+* **Key Concepts Covered:**
+  * Auto-generation cycles with `useEffect`.
+  * Optimizing render execution using the `useCallback` memoization hook.
+  * Direct clipboard actions using programmatic `useRef` nodes.
+  * Building premium dark glassmorphism layouts and slide-in notifications via Vanilla CSS.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/password-generator
 npm install
 npm run dev
 ```

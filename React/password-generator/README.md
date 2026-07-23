@@ -1,24 +1,23 @@
-# 🔑 SecureKey — Modern Password Generator
+# 🔑 React Password Generator
 
-An interactive, premium password generation web application built with **React** and **Vite**, featuring a glassmorphism design, real-time strength validation, custom length controllers, and stateful clipboard actions.
+A clean and interactive random password generation web application built with **React** and **Vite**, utilizing standard React hooks for reactivity and state management.
 
 ---
 
 ## ✨ Features
 
-- **🛡️ Custom Parameter Rules:** Customize passwords with numbers and special symbols on-the-fly.
-- **📊 Real-time Strength Metrics:** Auto-evaluates complexity (Weak, Medium, Strong, Very Secure) using color-coded visual indicator bars.
-- **✨ Premium UI/UX:** Styled using pure Vanilla CSS featuring glassmorphism backdrops, glowing shadows, hover scaling, and transition keyframes.
-- **📋 Direct Clipboard Copy:** Instant one-click copy with state-changing SVG checkmark feedback and slide-in toast notifications.
+- **⚙️ Custom Parameters:** Adjust password length (between 8 and 20) and toggle numbers and special characters.
+- **📋 Clipboard Copy:** Select and copy generated passwords directly to the clipboard.
+- **⚡ Real-time Updates:** Generates a new password instantly when parameters are updated.
 
 ---
 
 ## 🏗️ Core React Concepts Applied
 
-1. **`useState` Hook:** For reactive handling of length range, character options, output display, copying states, and toast presentation.
-2. **`useCallback` Hook:** Memoizes generation and copy algorithms to optimize performance and prevent redundant re-renders.
-3. **`useEffect` Hook:** Triggers key generation cycles automatically whenever options change.
-4. **`useRef` Hook:** Reference container to handle DOM interaction for selecting generated text programmatically.
+1. **`useState` Hook:** Manages states for password length, number toggling, character toggling, and output value.
+2. **`useCallback` Hook:** Memoizes generation and clipboard copy operations to optimize performance and prevent redundant recreation.
+3. **`useEffect` Hook:** Automatically triggers the password generation function whenever dependencies (length, numbers, special characters) update.
+4. **`useRef` Hook:** Accesses and selects the input value DOM node programmatically during copying.
 
 ---
 
@@ -37,9 +36,4 @@ An interactive, premium password generation web application built with **React**
 3. **Launch the development server:**
    ```bash
    npm run dev
-   ```
-
-4. **Compile production build:**
-   ```bash
-   npm run build
    ```

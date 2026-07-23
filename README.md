@@ -159,13 +159,12 @@ npm run dev
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="30" height="30"/>
 </p>
 
-An elegant, glassmorphic password utility designed to generate highly secure random keys with visual validation.
+A simple and interactive random password generation utility built with React.
 
 * **Key Concepts Covered:**
   * Auto-generation cycles with `useEffect`.
   * Optimizing render execution using the `useCallback` memoization hook.
-  * Direct clipboard actions using programmatic `useRef` nodes.
-  * Building premium dark glassmorphism layouts and slide-in notifications via Vanilla CSS.
+  * Direct clipboard selection and copy using programmatic `useRef` nodes.
 
 #### 🛠️ How to run locally:
 

@@ -28,6 +28,7 @@ MERN/
 ├── React/
 │   ├── Counter-App/      # Interactive React Counter application using useState hooks & boundary validation
 │   ├── bg-changer/       # Dynamic background changer utilizing useState and inline styles
+│   ├── currency-converter/# Currency Converter application fetching live rates from an API
 │   ├── password-generator/# SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
 │   └── reactprops/       # Reusable Card components utilizing React props and styled with Tailwind CSS v4
 ├── .gitignore
@@ -173,6 +174,33 @@ cd React/password-generator
 npm install
 npm run dev
 ```
+
+---
+
+### 💱 5. Currency Converter App (`React/currency-converter`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+</p>
+
+A React-based currency converter application that retrieves real-time exchange rates from an external API.
+
+* **Development Journey & Stages:**
+  * **Stage 1 (Simple Fetch Call):** Firstly, made a simple fetch call (`test.js`) to request and verify latest exchange rates from the API (`ExchangeRate-API`) and inspect the returned data structure.
+  * **Stage 2 (Inputs & Live Conversion):** Built the interactive component that takes 2 currency inputs (From and To currency options) and an amount input to perform live conversions using React state management and side effects.
+  * **Stage 3 (Upcoming/Future Stage):** Further improvement will include refactoring the API logic using a custom hook (e.g., `useCurrencyInfo`) and significantly improving the UI styling.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/currency-converter
+npm install
+npm run dev
+```
+
+---
 
 ## 🛠️ Tech Stack & Tools
 

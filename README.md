@@ -26,11 +26,12 @@ Welcome to my **MERN Stack Learning Repository**! This repository tracks my dail
 ```
 MERN/
 ├── React/
-│   ├── Counter-App/      # Interactive React Counter application using useState hooks & boundary validation
-│   ├── bg-changer/       # Dynamic background changer utilizing useState and inline styles
-│   ├── currency-converter/# Currency Converter application fetching live rates from an API
-│   ├── password-generator/# SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
-│   └── reactprops/       # Reusable Card components utilizing React props and styled with Tailwind CSS v4
+│   ├── Counter-App/        # Interactive React Counter application using useState hooks & boundary validation
+│   ├── bg-changer/         # Dynamic background changer utilizing useState and inline styles
+│   ├── currency-converter/ # Currency Converter application fetching live rates from an API
+│   ├── password-generator/ # SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
+│   ├── reactprops/         # Reusable Card components utilizing React props and styled with Tailwind CSS v4
+│   └── Routers/            # React Router app featuring client-side routing, Layout pattern (<Outlet />), dynamic NavLinks, and pages
 ├── .gitignore
 └── README.md
 ```
@@ -52,7 +53,7 @@ MERN/
   - [x] Callback memoization (`useCallback`)
 - [ ] **Advanced React**
   - [ ] Context API (`useContext`) & `useReducer`
-  - [ ] Routing with React Router
+  - [x] Routing with React Router (`createBrowserRouter`, `RouterProvider`, `Outlet`, `NavLink`)
   - [ ] State Management (Redux Toolkit / Zustand)
 - [ ] **Node.js & Express.js**
   - [ ] RESTful APIs & Middleware
@@ -202,9 +203,35 @@ npm run dev
 
 ---
 
+### 🧭 6. React Router App (`React/Routers`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+</p>
+
+A single-page React application implementing client-side routing using **React Router DOM**. It showcases clean layout architecture, nested routes, and dynamic navigation link styling.
+
+* **Key Concepts Covered:**
+  * Declarative route configuration with `createBrowserRouter` & `RouterProvider`.
+  * Master layout pattern using `<Layout />` and `<Outlet />` for persistent Header & Footer wrappers.
+  * Navigation active state styling using `<NavLink className={({ isActive }) => ...} />`.
+  * Multi-page architecture including `Home`, `About`, and `Contact` page components.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/Routers
+npm install
+npm run dev
+```
+
+---
+
 ## 🛠️ Tech Stack & Tools
 
-* **Frontend:** React, JavaScript (ES6+), HTML5, CSS3, Vite
+* **Frontend:** React, React Router DOM, JavaScript (ES6+), HTML5, CSS3, Vite, Tailwind CSS
 * **Backend (Upcoming):** Node.js, Express.js
 * **Database (Upcoming):** MongoDB, Mongoose
 * **Version Control:** Git, GitHub

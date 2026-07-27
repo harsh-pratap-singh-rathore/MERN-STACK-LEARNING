@@ -28,6 +28,7 @@ MERN/
 ├── React/
 │   ├── Counter-App/        # Interactive React Counter application using useState hooks & boundary validation
 │   ├── bg-changer/         # Dynamic background changer utilizing useState and inline styles
+│   ├── context-api/        # Global state management using React Context API (`createContext`, `useContext`, Provider pattern)
 │   ├── currency-converter/ # Currency Converter application fetching live rates from an API
 │   ├── password-generator/ # SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
 │   ├── reactprops/         # Reusable Card components utilizing React props and styled with Tailwind CSS v4
@@ -52,7 +53,7 @@ MERN/
   - [x] DOM references (`useRef`)
   - [x] Callback memoization (`useCallback`)
 - [ ] **Advanced React**
-  - [ ] Context API (`useContext`) & `useReducer`
+  - [x] Context API (`useContext`) & `useReducer`
   - [x] Routing with React Router (`createBrowserRouter`, `RouterProvider`, `Outlet`, `NavLink`)
   - [ ] State Management (Redux Toolkit / Zustand)
 - [ ] **Node.js & Express.js**
@@ -223,6 +224,32 @@ A single-page React application implementing client-side routing using **React R
 
 ```bash
 cd React/Routers
+npm install
+npm run dev
+```
+
+---
+
+### ⚛️ 7. Context API App (`React/context-api`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+</p>
+
+A React application demonstrating global state management using the **Context API**.
+
+* **Key Concepts Covered:**
+  * Creating a custom Context object using `createContext()`.
+  * Building a custom `ContextProvider` wrapper component to encapsulate shared state (`useState`).
+  * Consuming context values across component trees with `useContext()`.
+  * Passing values (`username`, `setusername`) seamlessly without prop drilling.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/context-api
 npm install
 npm run dev
 ```

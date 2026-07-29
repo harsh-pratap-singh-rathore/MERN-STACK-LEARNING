@@ -32,7 +32,8 @@ MERN/
 │   ├── currency-converter/ # Currency Converter application fetching live rates from an API
 │   ├── password-generator/ # SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
 │   ├── reactprops/         # Reusable Card components utilizing React props and styled with Tailwind CSS v4
-│   └── Routers/            # React Router app featuring client-side routing, Layout pattern (<Outlet />), dynamic NavLinks, and pages
+│   ├── Routers/            # React Router app featuring client-side routing, Layout pattern (<Outlet />), dynamic NavLinks, and pages
+│   └── theme-switcher/     # Dark/Light Theme Switcher using Context API (custom `useTheme` hook, `ThemeProvider`) & Tailwind CSS
 ├── .gitignore
 └── README.md
 ```
@@ -250,6 +251,35 @@ A React application demonstrating global state management using the **Context AP
 
 ```bash
 cd React/context-api
+npm install
+npm run dev
+```
+
+---
+
+### 🌓 8. Theme Switcher with Context API & Tailwind CSS (`React/theme-switcher`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" width="30" height="30"/>
+</p>
+
+A feature-complete Light/Dark Theme Switcher application built with **React 19**, **Tailwind CSS**, and an **improved, modern Context API pattern**.
+
+* **Key Concepts & Modern Context API Pattern:**
+  * **New Context Setup (`src/context/theme.js`):** Defines initial state schema directly in `createContext({ theme: "light", darkTheme: () => {}, lightTheme: () => {} })`.
+  * **Exported Provider:** Exporting `ThemeContext.Provider` as `ThemeProvider` for cleaner context wrapper syntax.
+  * **Custom Hook (`useTheme`):** Encapsulating `useContext(ThemeContext)` in a custom `useTheme()` hook for clean, single-import consumption across components.
+  * **DOM Synchronization with `useEffect`:** React side-effect hook automatically syncs theme state (`"light"` / `"dark"`) with the root `<html>` element's class list to trigger Tailwind's `dark:...` utility classes seamlessly.
+  * **Beginner-Friendly React Code:** `useState` hook manages theme state, and `toggleTheme` click handler drives smooth UI transitions.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/theme-switcher
 npm install
 npm run dev
 ```

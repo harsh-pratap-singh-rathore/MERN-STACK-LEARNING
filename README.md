@@ -1,3 +1,5 @@
+
+
 # 🚀 MERN Stack Learning Journey
 
 <div align="center">
@@ -33,7 +35,8 @@ MERN/
 │   ├── password-generator/ # SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
 │   ├── reactprops/         # Reusable Card components utilizing React props and styled with Tailwind CSS v4
 │   ├── Routers/            # React Router app featuring client-side routing, Layout pattern (<Outlet />), dynamic NavLinks, and pages
-│   └── theme-switcher/     # Dark/Light Theme Switcher using Context API (custom `useTheme` hook, `ThemeProvider`) & Tailwind CSS
+│   ├── theme-switcher/     # Dark/Light Theme Switcher using Context API (custom `useTheme` hook, `ThemeProvider`) & Tailwind CSS
+│   └── todo-local-storage/ # Task Master: Todo application utilizing Context API, custom `useTodo` hook, and Local Storage persistence
 ├── .gitignore
 └── README.md
 ```
@@ -55,6 +58,7 @@ MERN/
   - [x] Callback memoization (`useCallback`)
 - [ ] **Advanced React**
   - [x] Context API (`useContext`) & `useReducer`
+  - [x] Context API with Local Storage persistence
   - [x] Routing with React Router (`createBrowserRouter`, `RouterProvider`, `Outlet`, `NavLink`)
   - [ ] State Management (Redux Toolkit / Zustand)
 - [ ] **Node.js & Express.js**
@@ -280,6 +284,37 @@ A feature-complete Light/Dark Theme Switcher application built with **React 19**
 
 ```bash
 cd React/theme-switcher
+npm install
+npm run dev
+```
+
+---
+
+### 📝 9. Task Master: Todo App with Context API & Local Storage (`React/todo-local-storage`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" alt="HTML5" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" alt="CSS3" width="30" height="30"/>
+</p>
+
+A full-featured task management web application built with **React 19**, **Context API**, and **Browser LocalStorage Persistence**.
+
+* **Key Concepts & Features:**
+  * **LocalStorage Synchronization:** Initial state loading from `localStorage` and side-effect syncing via `useEffect` whenever state updates.
+  * **Full CRUD Operations:** `addtodo`, `updatetodo`, `deletetodo`, and `toogletodo` methods supplied via custom Context (`useTodo`).
+  * **Inline Editing & Toggle:** Editable inputs toggleable per todo item with save/lock controls and completion checkboxes.
+  * **Task Filtering & Counter:** Filter tasks by **All**, **Active**, or **Completed** statuses with dynamic count badges and empty states.
+  * **Modern UI:** Built with custom glassmorphism design system, dark mode palette, and smooth micro-animations.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/todo-local-storage
 npm install
 npm run dev
 ```

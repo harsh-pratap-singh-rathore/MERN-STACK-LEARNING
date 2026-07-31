@@ -2,11 +2,13 @@
 
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React Logo" width="80" height="80"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="60" height="60"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="Redux Logo" width="80" height="80"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="Redux" width="60" height="60"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite Logo" width="80" height="80"/>
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="60" height="60"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" width="60" height="60"/>
 
   <br/><br/>
 
@@ -14,65 +16,48 @@
   [![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
   [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+  [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
   [![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)](https://github.com/harsh-pratap-singh-rathore/MERN-STACK-LEARNING)
 
 </div>
 
 ---
 
-Welcome to my **MERN Stack Learning Repository**! This repository tracks my daily progress, code snippets, projects, and hands-on experiments as I master Full-Stack Web Development using **MongoDB, Express.js, React, and Node.js**.
+> [!NOTE]  
+> 🌟 **Welcome to my MERN Stack Learning Repository!**  
+> This repository tracks my daily hands-on progress, code snippets, mini-apps, and full-stack experiments as I master Full-Stack Web Development using **MongoDB, Express.js, React, and Node.js**.
 
 ---
 
 ## 📌 Repository Structure
 
-```
-MERN/
-├── React/
-│   ├── Counter-App/        # Interactive React Counter application using useState hooks & boundary validation
-│   ├── bg-changer/         # Dynamic background changer utilizing useState and inline styles
-│   ├── context-api/        # Global state management using React Context API (`createContext`, `useContext`, Provider pattern)
-│   ├── currency-converter/ # Currency Converter application fetching live rates from an API
-│   ├── password-generator/ # SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
-│   ├── reactprops/         # Reusable Card components utilizing React props and styled with Tailwind CSS v4
-│   ├── Redux-Toolkit-Todo/ # Task management app built using Redux Toolkit (`configureStore`, `createSlice`, `useSelector`, `useDispatch`)
-│   ├── Routers/            # React Router app featuring client-side routing, Layout pattern (<Outlet />), dynamic NavLinks, and pages
-│   ├── theme-switcher/     # Dark/Light Theme Switcher using Context API (custom `useTheme` hook, `ThemeProvider`) & Tailwind CSS
-│   └── todo-local-storage/ # Task Master: Todo application utilizing Context API, custom `useTodo` hook, and Local Storage persistence
-├── .gitignore
-└── README.md
-```
+| 📁 Project Folder | ⚡ Tech Stack & Description | 🎯 Key Concepts Covered |
+| :--- | :--- | :--- |
+| `React/Counter-App` | React 19 + Vite | `useState`, boundary validation logic |
+| `React/bg-changer` | React + Inline CSS | Dynamic background switcher, reactive state |
+| `React/reactprops` | React + Tailwind CSS v4 | Reusable Card components, passing & reading props |
+| `React/password-generator` | React + Hooks | `useCallback`, `useEffect`, `useRef`, clipboard API |
+| `React/currency-converter` | React + REST API | Live currency rates API, state synchronization |
+| `React/Routers` | React Router DOM | Client-side routing, `createBrowserRouter`, `<Outlet />`, `<NavLink />` |
+| `React/context-api` | React Context API | Global state, `createContext`, `useContext`, Provider pattern |
+| `React/theme-switcher` | Context API + Tailwind | Light/Dark theme toggle, custom `useTheme` hook, DOM class sync |
+| `React/todo-local-storage` | Context API + LocalStorage | Full CRUD todo app, browser persistence, task filters |
+| `React/Redux-Toolkit-Todo` | Redux Toolkit + Vanilla CSS | Centralized store (`configureStore`), `createSlice`, `useDispatch`, `useSelector` |
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-### 🎯 Status: REACT DONE! ✅
+> ### 🎉 Status: REACT SECTION DONE! ✅
 
-- [x] **React Basics**
-  - [x] Components & JSX syntax
-  - [x] Managing state with `useState`
-  - [x] Event Handling & Conditionals
-  - [x] Component Reusability & Props
-  - [x] Basic & Inline CSS styling
-  - [x] Tailwind CSS v4 integration
-- [x] **Hooks & Optimization**
-  - [x] Side effects & dependency arrays (`useEffect`)
-  - [x] DOM references (`useRef`)
-  - [x] Callback memoization (`useCallback`)
-- [x] **Advanced React**
-  - [x] Context API (`useContext`) & `useReducer`
-  - [x] Context API with Local Storage persistence
-  - [x] Routing with React Router (`createBrowserRouter`, `RouterProvider`, `Outlet`, `NavLink`)
-  - [x] State Management (Redux Toolkit)
-- [ ] **Node.js & Express.js**
-  - [ ] RESTful APIs & Middleware
-  - [ ] Authentication & JWT
-- [ ] **MongoDB & Mongoose**
-  - [ ] Schema design & CRUD operations
-  - [ ] Aggregation frameworks
-- [ ] **Full-Stack Projects**
-  - [ ] End-to-end MERN Applications
+| Phase | Module | Topics Covered / Planned | Status |
+| :---: | :--- | :--- | :---: |
+| 🟢 | **React Basics** | Components, JSX, `useState`, Props, Inline & Tailwind CSS | `100%` ✅ |
+| 🟢 | **Hooks & Optimization** | Side Effects (`useEffect`), References (`useRef`), Memoization (`useCallback`) | `100%` ✅ |
+| 🟢 | **Advanced React** | Context API, Browser LocalStorage, React Router, Redux Toolkit | `100%` ✅ |
+| 🟡 | **Node.js & Express.js** | RESTful APIs, Middleware, JWT Authentication | `Upcoming` ⏳ |
+| 🟡 | **MongoDB & Mongoose** | Schema Design, CRUD Operations, Aggregation Frameworks | `Upcoming` ⏳ |
+| 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `Upcoming` ⏳ |
 
 ---
 

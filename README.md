@@ -1,16 +1,17 @@
-
-
 # 🚀 MERN Stack Learning Journey
 
 <div align="center">
 
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React Logo" width="80" height="80"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="Redux Logo" width="80" height="80"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite Logo" width="80" height="80"/>
 
   <br/><br/>
 
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
+  [![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
   [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   [![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)](https://github.com/harsh-pratap-singh-rathore/MERN-STACK-LEARNING)
@@ -34,6 +35,7 @@ MERN/
 │   ├── currency-converter/ # Currency Converter application fetching live rates from an API
 │   ├── password-generator/ # SecureKey: Password generator using hooks (useState, useCallback, useEffect, useRef) & glassmorphic CSS UI
 │   ├── reactprops/         # Reusable Card components utilizing React props and styled with Tailwind CSS v4
+│   ├── Redux-Toolkit-Todo/ # Task management app built using Redux Toolkit (`configureStore`, `createSlice`, `useSelector`, `useDispatch`)
 │   ├── Routers/            # React Router app featuring client-side routing, Layout pattern (<Outlet />), dynamic NavLinks, and pages
 │   ├── theme-switcher/     # Dark/Light Theme Switcher using Context API (custom `useTheme` hook, `ThemeProvider`) & Tailwind CSS
 │   └── todo-local-storage/ # Task Master: Todo application utilizing Context API, custom `useTodo` hook, and Local Storage persistence
@@ -44,6 +46,8 @@ MERN/
 ---
 
 ## 🗺️ Learning Roadmap
+
+### 🎯 Status: REACT DONE! ✅
 
 - [x] **React Basics**
   - [x] Components & JSX syntax
@@ -56,11 +60,11 @@ MERN/
   - [x] Side effects & dependency arrays (`useEffect`)
   - [x] DOM references (`useRef`)
   - [x] Callback memoization (`useCallback`)
-- [ ] **Advanced React**
+- [x] **Advanced React**
   - [x] Context API (`useContext`) & `useReducer`
   - [x] Context API with Local Storage persistence
   - [x] Routing with React Router (`createBrowserRouter`, `RouterProvider`, `Outlet`, `NavLink`)
-  - [ ] State Management (Redux Toolkit / Zustand)
+  - [x] State Management (Redux Toolkit)
 - [ ] **Node.js & Express.js**
   - [ ] RESTful APIs & Middleware
   - [ ] Authentication & JWT
@@ -321,9 +325,38 @@ npm run dev
 
 ---
 
+### ⚡ 10. Redux Toolkit Todo App (`React/Redux-Toolkit-Todo`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="Redux" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+</p>
+
+A task management application built with **React** and **Redux Toolkit** for centralized global state management.
+
+* **Key Concepts Covered:**
+  * Setting up the centralized Redux store using `configureStore`.
+  * Creating application slices with `createSlice` (`todoslice.js`).
+  * Dispatching action creators with `useDispatch` (`addTodo`, `removeTodo`).
+  * Extracting slice state from the store using `useSelector`.
+  * Custom dark mode UI built with Vanilla CSS.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/Redux-Toolkit-Todo
+npm install
+npm run dev
+```
+
+---
+
 ## 🛠️ Tech Stack & Tools
 
-* **Frontend:** React, React Router DOM, JavaScript (ES6+), HTML5, CSS3, Vite, Tailwind CSS
+* **Frontend:** React, Redux Toolkit, React Router DOM, JavaScript (ES6+), HTML5, CSS3, Vite, Tailwind CSS
 * **Backend (Upcoming):** Node.js, Express.js
 * **Database (Upcoming):** MongoDB, Mongoose
 * **Version Control:** Git, GitHub

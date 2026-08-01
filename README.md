@@ -23,6 +23,10 @@
 
 ---
 
+> [!IMPORTANT]  
+> ⭐ **FLAGSHIP CAPSTONE PROJECT STARTED: 🛒 Stack-Cart (E-Commerce UI)**  
+> I have officially launched **Stack-Cart** — a major capstone E-Commerce frontend web app where I am putting everything I've learned in React (Routing, Layouts, State, Hooks, Context API, Redux Toolkit, and UI Components) into action!
+
 > [!NOTE]  
 > 🌟 **Welcome to my MERN Stack Learning Repository!**  
 > This repository tracks my daily hands-on progress, code snippets, mini-apps, and full-stack experiments as I master Full-Stack Web Development using **MongoDB, Express.js, React, and Node.js**.
@@ -33,6 +37,7 @@
 
 | 📁 Project Folder | ⚡ Tech Stack & Description | 🎯 Key Concepts Covered |
 | :--- | :--- | :--- |
+| **`React/Stack-Cart`** ⭐ | **React E-Commerce UI (Capstone)** | **Flagship Capstone Project combining Routing, Layouts, State, Context & Redux** |
 | `React/Counter-App` | React 19 + Vite | `useState`, boundary validation logic |
 | `React/bg-changer` | React + Inline CSS | Dynamic background switcher, reactive state |
 | `React/reactprops` | React + Tailwind CSS v4 | Reusable Card components, passing & reading props |
@@ -48,13 +53,14 @@
 
 ## 🗺️ Learning Roadmap
 
-> ### 🎉 Status: REACT SECTION DONE! ✅
+> ### 🎉 Status: REACT MODULES COMPLETED & CAPSTONE IN PROGRESS! 🚀
 
 | Phase | Module | Topics Covered / Planned | Status |
 | :---: | :--- | :--- | :---: |
 | 🟢 | **React Basics** | Components, JSX, `useState`, Props, Inline & Tailwind CSS | `100%` ✅ |
 | 🟢 | **Hooks & Optimization** | Side Effects (`useEffect`), References (`useRef`), Memoization (`useCallback`) | `100%` ✅ |
 | 🟢 | **Advanced React** | Context API, Browser LocalStorage, React Router, Redux Toolkit | `100%` ✅ |
+| 🚀 | **React Capstone** | **Stack-Cart (E-Commerce UI)** — Combining all React learning | `In Progress` 🛠️ |
 | 🟡 | **Node.js & Express.js** | RESTful APIs, Middleware, JWT Authentication | `Upcoming` ⏳ |
 | 🟡 | **MongoDB & Mongoose** | Schema Design, CRUD Operations, Aggregation Frameworks | `Upcoming` ⏳ |
 | 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `Upcoming` ⏳ |
@@ -62,6 +68,33 @@
 ---
 
 ## ⚡ Featured Projects
+
+### ⭐ 0. FLAGSHIP CAPSTONE: 🛒 Stack-Cart E-Commerce UI (`React/Stack-Cart`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="35" height="35"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="35" height="35"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="35" height="35"/>
+</p>
+
+A major real-world E-Commerce application UI built to consolidate and demonstrate **all React concepts** learned so far in a single production-like project.
+
+* **Development Progress & Current Status:**
+  * 🟢 **Stage 1 (Client-Side Routing & Layout - DONE):** Implemented client-side routing using `createBrowserRouter` and `RouterProvider`. Structured main layout using `<Layout />` wrapper with `<Outlet />` for persistent `<Header />` and `<Footer />` components across `Home`, `About`, `Products`, and `Contact` routes.
+  * 🟡 **Stage 2 (Upcoming):** Dynamic Product Catalog & Category filters.
+  * 🟡 **Stage 3 (Upcoming):** Global Cart & Checkout management using Context API & Redux Toolkit.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd React/Stack-Cart
+npm install
+npm run dev
+```
+
+---
 
 ### 🧮 1. React Counter App (`React/Counter-App`)
 

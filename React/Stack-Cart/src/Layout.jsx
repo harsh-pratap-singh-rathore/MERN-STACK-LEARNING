@@ -1,27 +1,27 @@
-import { useState } from "react";
-import { Outlet } from "react-router-dom";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import { CartProvider } from "./Context/CartContext";
+import React, { useState } from 'react'
+import { Outlet } from 'react-router-dom'
+import Header from './Routers/Header'
+import Footer from './Routers/Footer'
+import { Cartprovider } from './Context/CartContext'
 
 function Layout() {
-  const [cartCount, setCartCount] = useState(0);
+  const [cart, setCart] = useState([]);
 
-  const addToCart = () => {
-    setCartCount((prev) => prev + 1);
+  const addtocart = (item) => {
+    setCart((prevCart) => [...prevCart, item || "Product"]);
   };
 
-  const removeFromCart = () => {
-    setCartCount((prev) => (prev > 0 ? prev - 1 : 0));
+  const removefromcart = () => {
+    setCart((prevCart) => (prevCart.length > 0 ? prevCart.slice(0, -1) : []));
   };
 
   return (
-    <CartProvider value={{ cartCount, addToCart, removeFromCart }}>
+    <Cartprovider value={{ cart, addtocart, removefromcart }}>
       <Header />
       <Outlet />
       <Footer />
-    </CartProvider>
+    </Cartprovider>
   );
 }
 
-export default Layout;
+export default Layout;

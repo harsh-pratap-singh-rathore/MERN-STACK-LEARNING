@@ -1,18 +1,18 @@
-import { useCart } from "../Context/CartContext"
+import useCart from '../Context/CartContext'
 
 function Products() {
-    const { cartCount, addToCart, removeFromCart } = useCart()
+  const { cart, addtocart, removefromcart } = useCart();
 
-    return (
-        <div style={{ padding: '20px' }}>
-            <h1>This Is Products Page</h1>
-            <p>Count: {cartCount}</p>
-            <div style={{ display: 'flex', gap: '10px' }}>
-                <button onClick={addToCart} style={{ padding: '10px', backgroundColor: 'green', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Add To Cart</button>
-                <button onClick={removeFromCart} style={{ padding: '10px', backgroundColor: 'red', color: 'white', border: 'none', borderRadius: '5px', cursor: 'pointer' }}>Remove From Cart</button>
-            </div>
-        </div>
-    )
+  return (
+    <>
+      <h1>This is Products Page</h1>
+      <p>Cart Items Count: {cart ? cart.length : 0}</p>
+      <div style={{ display: 'flex', gap: '10px', marginTop: '10px' }}>
+        <button onClick={() => addtocart("New Product")}>Add To Cart</button>
+        <button onClick={removefromcart}>Remove From Cart</button>
+      </div>
+    </>
+  )
 }
 
 export default Products

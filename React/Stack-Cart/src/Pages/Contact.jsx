@@ -1,9 +1,9 @@
+import React from 'react'
+
 function Contact() {
-    return (
-        <div>
-            <h1>This Is Contact Page</h1>
-        </div>
-    )
+  return (
+    <h1>This is Contact Page</h1>
+  )
 }
 
 export default Contact

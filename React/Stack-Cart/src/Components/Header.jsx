@@ -1,6 +1,9 @@
-// import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { useCart } from '../Context/CartContext'
+
 function Header() {
+  const { cartCount } = useCart()
+
   return (
     <div style={{backgroundColor:'cyan', color:'white', padding:'10px', display:'flex', justifyContent:'space-between', alignItems:'center', fontSize:'20px'}}>
       <h1 style={{margin:'0', padding:'0'}}>Stack Cart</h1>
@@ -15,10 +18,10 @@ function Header() {
             <button>Register</button>
         </div>
         <div>
-            <h5>Cart(0)</h5>
+            <h5>Cart({cartCount})</h5>
         </div>
     </div>
   )
 }
 
-export default Header
+export default Header

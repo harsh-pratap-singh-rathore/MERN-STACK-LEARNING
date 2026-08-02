@@ -40,14 +40,21 @@ This project is built from scratch as a modern, high-performance E-Commerce fron
 >   * `/products` — Product Catalog
 >   * `/contact` — Contact & Support
 
+> ### 🟢 Stage 2: Global Cart Context & State Management (`COMPLETED` ✅)
+> 
+> * **Context API Infrastructure:** Designed `CartContext.js` using `createContext` and custom `useCart` hook for streamlined global state consumption.
+> * **Layout Provider Wrapping:** Wrapped master `<Layout />` with `<CartProvider />`, exposing reactive `cartCount`, `addToCart`, and `removeFromCart` state methods.
+> * **Header Counter Sync:** Linked `<Header />` component to dynamically render real-time cart counts `Cart({cartCount})`.
+> * **Interactive Action Handlers:** Implemented `Add To Cart` and `Remove From Cart` action triggers within `<Products />` page.
+
 ---
 
 ## 🛣️ Roadmap & Feature Milestones
 
 - [x] **Phase 1: Architecture & Routing** — `createBrowserRouter`, `<Layout />`, `<Outlet />`, `Header`, `Footer`, Multi-page structure.
-- [ ] **Phase 2: Product Catalog & Grid** — Dynamic product rendering, filtering by categories, search functionality.
-- [ ] **Phase 3: Shopping Cart System** — Global cart state, add/remove items, quantity updates, price calculator.
-- [ ] **Phase 4: State Management & Persistence** — Context API / Redux Toolkit integration with LocalStorage backup.
+- [x] **Phase 2: Global Cart State & Context API** — `createContext`, `CartProvider`, `useCart` hook, dynamic header counter & cart actions.
+- [ ] **Phase 3: Dynamic Product Catalog Grid** — Product cards rendering, category filters, product search.
+- [ ] **Phase 4: State Persistence & Advanced Cart** — Detailed cart drawer, item list management, LocalStorage backup.
 - [ ] **Phase 5: User Auth & Checkout UI** — Interactive login/registration modals and checkout summary view.
 
 ---

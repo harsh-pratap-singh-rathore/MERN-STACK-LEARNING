@@ -17,9 +17,13 @@ function Layout() {
 
   return (
     <Cartprovider value={{ cart, addtocart, removefromcart }}>
-      <Header />
-      <Outlet />
-      <Footer />
+      <div className="min-h-screen flex flex-col bg-white text-gray-900">
+        <Header />
+        <main className="flex-1 max-w-screen-xl w-full mx-auto p-4 pt-20">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
     </Cartprovider>
   );
 }

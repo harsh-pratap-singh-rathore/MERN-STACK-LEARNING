@@ -74,6 +74,8 @@
 <p align="left">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="35" height="35"/>
   &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" width="35" height="35"/>
+  &nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="35" height="35"/>
   &nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="35" height="35"/>
@@ -83,8 +85,9 @@ A major real-world E-Commerce application UI built to consolidate and demonstrat
 
 * **Development Progress & Current Status:**
   * 🟢 **Stage 1 (Client-Side Routing & Layout - DONE):** Implemented client-side routing using `createBrowserRouter` and `RouterProvider`. Structured main layout using `<Layout />` wrapper with `<Outlet />` for persistent `<Header />` and `<Footer />` components across `Home`, `About`, `Products`, and `Contact` routes.
-  * 🟢 **Stage 2 (Global Cart Context & State Management - DONE):** Configured Context API (`CartContext.js` & `CartProvider`) to manage global cart count state. Linked dynamic header cart badge (`Cart({cartCount})`) with action handlers (`addToCart`, `removeFromCart`) in the `Products` component.
-  * 🟡 **Stage 3 (Upcoming):** Dynamic Product Catalog & Category filters.
+  * 🟢 **Stage 2 (Global Cart Context & State Management - DONE):** Configured Context API (`CartContext.js` & `CartProvider`) to manage global cart count state. Linked dynamic header cart badge (`Cart({cartCount})`) with action handlers (`addtocart`, `removefromcart`).
+  * 🟢 **Stage 3 (Tailwind CSS v4 & Reusable Component System - DONE):** Configured Tailwind CSS v4 via `@tailwindcss/vite`, added glassmorphism header navigation, fixed outlet overlap spacing, and created reusable `<ProductCard imgsrc="..." />` components aligned side-by-side in responsive flex containers.
+  * 🟡 **Stage 4 (Upcoming):** Dynamic Product Catalog & Category filters.
 
 #### 🛠️ How to run locally:
 

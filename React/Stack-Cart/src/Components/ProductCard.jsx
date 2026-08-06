@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useId } from 'react'
 import useCart from '../Context/CartContext'
+
 function ProductCard({ imgsrc }) {
-    const {  addtocart, removefromcart} = useCart();
+    const id = useId();
+    const { addtocart, removefromcart} = useCart();
   return (
-    <div className="bg-white block max-w-sm border border-gray-200 rounded-xl shadow-xs overflow-hidden">
+    <div id={id} className="bg-white block max-w-sm border border-gray-200 rounded-xl shadow-xs overflow-hidden">
       <a href="#">
         <img className="w-full h-48 object-cover" src={imgsrc} alt="Product" />
       </a>

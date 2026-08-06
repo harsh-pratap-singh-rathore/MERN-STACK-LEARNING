@@ -7,6 +7,8 @@ import { createBrowserRouter , RouterProvider } from 'react-router-dom'
 import About from './Pages/About.jsx'
 import Contact from './Pages/Contact.jsx'
 import Products from './Pages/Products.jsx'
+import LoginSignup from './Pages/Login-Signup.jsx'
+
 const router = createBrowserRouter([
   {
     path :"/",
@@ -27,11 +29,14 @@ const router = createBrowserRouter([
       {
         path : "/contact",
         element : <Contact />
+      },
+      {
+        path : "/login",
+        element : <LoginSignup />
       }
     ]
   }
-]
-)
+])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router}/>

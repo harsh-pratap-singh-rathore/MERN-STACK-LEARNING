@@ -15,6 +15,8 @@
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
   [![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)](https://redux-toolkit.js.org/)
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+  [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+  [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
   [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
   [![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)](https://github.com/harsh-pratap-singh-rathore/MERN-STACK-LEARNING)
@@ -48,6 +50,7 @@
 | `React/theme-switcher` | Context API + Tailwind | Light/Dark theme toggle, custom `useTheme` hook, DOM class sync |
 | `React/todo-local-storage` | Context API + LocalStorage | Full CRUD todo app, browser persistence, task filters |
 | `React/Redux-Toolkit-Todo` | Redux Toolkit + Vanilla CSS | Centralized store (`configureStore`), `createSlice`, `useDispatch`, `useSelector` |
+| `Node/01_BASICNODE` | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
 
 ---
 
@@ -61,7 +64,7 @@
 | 🟢 | **Hooks & Optimization** | Side Effects (`useEffect`), References (`useRef`), Memoization (`useCallback`) | `100%` ✅ |
 | 🟢 | **Advanced React** | Context API, Browser LocalStorage, React Router, Redux Toolkit | `100%` ✅ |
 | 🚀 | **React Capstone** | **Stack-Cart (E-Commerce UI)** — Combining all React learning | `In Progress` 🛠️ |
-| 🟡 | **Node.js & Express.js** | RESTful APIs, Middleware, JWT Authentication | `Upcoming` ⏳ |
+| 🟢 | **Node.js & Express.js** | First Express Server, Environment Variables (`dotenv`), REST API routes | `In Progress` 🛠️ |
 | 🟡 | **MongoDB & Mongoose** | Schema Design, CRUD Operations, Aggregation Frameworks | `Upcoming` ⏳ |
 | 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `Upcoming` ⏳ |
 
@@ -371,6 +374,34 @@ A task management application built with **React** and **Redux Toolkit** for cen
 cd React/Redux-Toolkit-Todo
 npm install
 npm run dev
+```
+
+---
+
+### 🟢 11. Basic Express Server (`Node/01_BASICNODE`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
+</p>
+
+My first backend web server built using **Node.js**, **Express.js**, and **dotenv** with modern ES Module syntax (`"type": "module"`).
+
+* **Key Features & Concepts Covered:**
+  * Setting up an Express application server with `express()`.
+  * Creating GET route endpoints (`/` and `/login`).
+  * Managing environment variables (`process.env.PORT`) using `dotenv/config`.
+  * Configuring ES Modules in Node.js (`import` statements and `"type": "module"` in `package.json`).
+
+#### 🛠️ How to run locally:
+
+```bash
+cd Node/01_BASICNODE
+npm install
+npm start
 ```
 
 ---

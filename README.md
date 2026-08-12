@@ -51,6 +51,7 @@
 | `React/todo-local-storage` | Context API + LocalStorage | Full CRUD todo app, browser persistence, task filters |
 | `React/Redux-Toolkit-Todo` | Redux Toolkit + Vanilla CSS | Centralized store (`configureStore`), `createSlice`, `useDispatch`, `useSelector` |
 | `Node/01_BASICNODE` | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
+| `Node/02_Backend_Frontend` | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
 
 ---
 
@@ -402,6 +403,42 @@ My first backend web server built using **Node.js**, **Express.js**, and **doten
 cd Node/01_BASICNODE
 npm install
 npm start
+```
+
+---
+
+### 🔗 12. Full-Stack Connection: Frontend & Backend (`Node/02_Backend_Frontend`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg" alt="React" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="30" height="30"/>
+</p>
+
+A full-stack project understanding **connecting React frontend with Express backend**, understanding **CORS**, configuring **Vite Proxy**, and making HTTP requests with **Axios**.
+
+* **Key Concepts Covered:**
+  * **CORS & Same-Origin Policy:** Why cross-origin requests are restricted by browsers and how proxying resolves it without server headers.
+  * **Vite Dev Server Proxy (`vite.config.js`):** Forwarding `/api` requests from frontend to Express backend at `http://localhost:4000`.
+  * **Axios & Side Effects (`useEffect`):** Asynchronous API fetching with `axios.get('/api/jokes')` using empty dependency array `[]`.
+  * **Dynamic React Rendering:** Storing response data in React state and displaying list items dynamically using `.map()`.
+
+#### 🛠️ How to run locally:
+
+```bash
+# Terminal 1: Backend
+cd Node/02_Backend_Frontend/backend
+npm install
+npm start
+
+# Terminal 2: Frontend
+cd Node/02_Backend_Frontend/frontend/vite-project
+npm install
+npm run dev
 ```
 
 ---

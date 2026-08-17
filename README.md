@@ -9,6 +9,12 @@
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vitejs/vitejs-original.svg" alt="Vite" width="60" height="60"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind" width="60" height="60"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="60" height="60"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express" width="60" height="60"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="60" height="60"/>
 
   <br/><br/>
 
@@ -17,6 +23,8 @@
   [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
   [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
   [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+  [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+  [![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)](https://mongoosejs.com/)
   [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
   [![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)](https://github.com/harsh-pratap-singh-rathore/MERN-STACK-LEARNING)
@@ -52,6 +60,7 @@
 | `React/Redux-Toolkit-Todo` | Redux Toolkit + Vanilla CSS | Centralized store (`configureStore`), `createSlice`, `useDispatch`, `useSelector` |
 | `Node/01_BASICNODE` | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
 | `Node/02_Backend_Frontend` | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
+| `Node/mongoose` | Mongoose + MongoDB | Data Modeling in NoSQL, Schemas, field validations, relational references (`ObjectId`, `ref`), timestamps, sub-documents (`User`, `Todo`, `SubTodo`) |
 
 ---
 
@@ -65,8 +74,8 @@
 | 🟢 | **Hooks & Optimization** | Side Effects (`useEffect`), References (`useRef`), Memoization (`useCallback`) | `100%` ✅ |
 | 🟢 | **Advanced React** | Context API, Browser LocalStorage, React Router, Redux Toolkit | `100%` ✅ |
 | 🚀 | **React Capstone** | **Stack-Cart (E-Commerce UI)** — Combining all React learning | `In Progress` 🛠️ |
-| 🟢 | **Node.js & Express.js** | First Express Server, Environment Variables (`dotenv`), REST API routes | `In Progress` 🛠️ |
-| 🟡 | **MongoDB & Mongoose** | Schema Design, CRUD Operations, Aggregation Frameworks | `Upcoming` ⏳ |
+| 🟢 | **Node.js & Express.js** | First Express Server, Environment Variables (`dotenv`), REST API routes, Frontend-Backend Integration | `100%` ✅ |
+| 🟢 | **MongoDB & Mongoose (Data Modeling)** | Schema Design, Field Validations, Relational References (`ObjectId`, `ref`), Sub-document Modeling | `In Progress` 🛠️ |
 | 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `Upcoming` ⏳ |
 
 ---
@@ -443,13 +452,49 @@ npm run dev
 
 ---
 
+### 🍃 13. Data Modeling with Mongoose & MongoDB (`Node/mongoose`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
+</p>
+
+An architectural study and hands-on implementation of **Data Modeling in MongoDB using Mongoose (ODM)**. Mastered schema design, database-level validation, automatic timestamping, and relational modeling (1-to-Many and Parent-Child relationships) using ObjectId references.
+
+* **Data Models Breakdown (`models/todos/`):**
+  * 👤 **User Model (`users.model.js`):** Identity schema storing `username`, `email`, and `password`. Enforces strict validation rules including `required: true`, `unique: true`, `lowercase: true`, and automated tracking via `{ timestamps: true }`.
+  * 📋 **Todo Model (`todo.model.js`):** Primary task model storing `content`, completion status (`completed: Boolean`, default `false`), creator relationship via `createdBy` (`mongoose.Schema.Types.ObjectId` referencing `"User"`), and an array of nested sub-task references (`subtodo: [{ type: mongoose.Schema.Types.ObjectId, ref: "subtodo" }]`).
+  * 📌 **Sub-Todo Model (`sub-todo.model.js`):** Modular sub-task schema storing `content`, `complet` flag, author reference (`createdBy` referencing `"User"`), and timestamps.
+
+* **Key Concepts Covered:**
+  * **Schema Definition:** Declaring robust schemas using `new mongoose.Schema({ ... }, { timestamps: true })`.
+  * **Validation & Constraints:** Enforcing schema types (`String`, `Boolean`, `ObjectId`), mandatory flags (`required: true`), uniqueness (`unique: true`), case sanitization (`lowercase: true`), and defaults (`default: false`).
+  * **Relational Modeling in NoSQL:** Linking collections using `mongoose.Schema.Types.ObjectId` and `ref` to maintain clean normalized data structures.
+  * **Sub-Document Arrays:** Referencing multiple child documents inside an array in parent schemas (`[ { type: ObjectId, ref: 'subtodo' } ]`).
+  * **Model Registration:** Compiling and exporting Mongoose models using `mongoose.model("ModelName", schema)`.
+
+#### 🛠️ Dependencies & Setup:
+
+```bash
+cd Node/mongoose
+npm install
+```
+
+---
+
 ## 🛠️ Tech Stack & Tools
 
 * **Frontend:** React, Redux Toolkit, React Router DOM, JavaScript (ES6+), HTML5, CSS3, Vite, Tailwind CSS
-* **Backend (Upcoming):** Node.js, Express.js
-* **Database (Upcoming):** MongoDB, Mongoose
+* **Backend:** Node.js, Express.js
+* **Database & ODM:** MongoDB, Mongoose (Data Modeling, Schemas & Relational References)
 * **Version Control:** Git, GitHub
 
 ---
 
 💻 *Maintained with dedication by [Harsh Pratap Singh Rathore](https://github.com/harsh-pratap-singh-rathore)*
+

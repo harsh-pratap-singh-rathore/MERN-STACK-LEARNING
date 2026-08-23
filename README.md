@@ -61,6 +61,7 @@
 | `Node/01_BASICNODE` | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
 | `Node/02_Backend_Frontend` | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
 | `Node/mongoose` | Mongoose + MongoDB | Data Modeling in NoSQL, Schemas, field validations, relational references (`ObjectId`, `ref`), timestamps, sub-documents (`User`, `Todo`, `SubTodo`) |
+| `Node/03_Project` 🚀 | Express.js + MongoDB + Mongoose | Production Backend Setup, Database Connection architecture, Connection Debugging & DNS SRV resolution |
 
 ---
 
@@ -75,8 +76,8 @@
 | 🟢 | **Advanced React** | Context API, Browser LocalStorage, React Router, Redux Toolkit | `100%` ✅ |
 | 🚀 | **React Capstone** | **Stack-Cart (E-Commerce UI)** — Combining all React learning | `In Progress` 🛠️ |
 | 🟢 | **Node.js & Express.js** | First Express Server, Environment Variables (`dotenv`), REST API routes, Frontend-Backend Integration | `100%` ✅ |
-| 🟢 | **MongoDB & Mongoose (Data Modeling)** | Schema Design, Field Validations, Relational References (`ObjectId`, `ref`), Sub-document Modeling | `In Progress` 🛠️ |
-| 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `Upcoming` ⏳ |
+| 🟢 | **MongoDB & Mongoose** | Data Modeling, Schemas, MongoDB Atlas Connection Architecture, Connection Debugging & DNS resolution | `100%` ✅ |
+| 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `In Progress` 🛠️ |
 
 ---
 
@@ -483,6 +484,36 @@ An architectural study and hands-on implementation of **Data Modeling in MongoDB
 ```bash
 cd Node/mongoose
 npm install
+```
+
+---
+
+### 🚀 14. Production Backend Setup & MongoDB Connection (`Node/03_Project`)
+
+<p align="left">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express" width="30" height="30"/>
+  &nbsp;
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
+</p>
+
+A production-grade backend setup implementing clean database connection architecture with **MongoDB Atlas**, **Mongoose**, **Express.js**, and **dotenv**. Includes in-depth network & DNS debugging for cloud database connections.
+
+* **Key Concepts & Implementations:**
+  * **Modular DB Connection Architecture (`src/db/index.js`):** Encapsulated database connection logic inside an `async/await` function returning connection instance details (`connectionInstance.connection.host`) and binding error listeners to Express app.
+  * **Constants & Environment Management:** Storing database names in `constants.js` and securely managing environment secrets (`MONGODB_URI`, `PORT`) with `dotenv`.
+  * **Connection Debugging & Scheme Handling:** Diagnosed and resolved `MongoParseError` by ensuring `dotenv.config()` loads before database initialization.
+  * **DNS SRV Resolution Troubleshooting:** Resolved `querySrv ECONNREFUSED` issues on local networks by configuring Google Public DNS (`8.8.8.8`, `8.8.4.4`) via Node's `node:dns` module to resolve MongoDB Atlas SRV cluster records reliably.
+
+#### 🛠️ How to run locally:
+
+```bash
+cd Node/03_Project
+npm install
+npm run dev
 ```
 
 ---

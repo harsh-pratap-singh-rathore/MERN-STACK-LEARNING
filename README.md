@@ -61,7 +61,7 @@
 | `Node/01_BASICNODE` | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
 | `Node/02_Backend_Frontend` | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
 | `Node/mongoose` | Mongoose + MongoDB | Data Modeling in NoSQL, Schemas, field validations, relational references (`ObjectId`, `ref`), timestamps, sub-documents (`User`, `Todo`, `SubTodo`) |
-| `Node/03_Project` 🚀 | Express.js + MongoDB + Mongoose | Production Backend Setup, Database Connection architecture, Connection Debugging & DNS SRV resolution |
+| `Node/03_Project` 🚀 | Express.js + MongoDB + Mongoose | Production Backend Architecture, DB Connection & DNS SRV Resolution, Express Middlewares, Custom `ApiError` & `ApiResponse`, `asyncHandler` Wrapper |
 
 ---
 
@@ -75,8 +75,9 @@
 | 🟢 | **Hooks & Optimization** | Side Effects (`useEffect`), References (`useRef`), Memoization (`useCallback`) | `100%` ✅ |
 | 🟢 | **Advanced React** | Context API, Browser LocalStorage, React Router, Redux Toolkit | `100%` ✅ |
 | 🚀 | **React Capstone** | **Stack-Cart (E-Commerce UI)** — Combining all React learning | `In Progress` 🛠️ |
-| 🟢 | **Node.js & Express.js** | First Express Server, Environment Variables (`dotenv`), REST API routes, Frontend-Backend Integration | `100%` ✅ |
+| 🟢 | **Node.js & Express.js** | First Express Server, Environment Variables (`dotenv`), REST API routes, Frontend-Backend Integration, Middlewares | `100%` ✅ |
 | 🟢 | **MongoDB & Mongoose** | Data Modeling, Schemas, MongoDB Atlas Connection Architecture, Connection Debugging & DNS resolution | `100%` ✅ |
+| 🟢 | **Production API Architecture** | Custom `ApiError` class, Standardized `ApiResponse`, `asyncHandler` Higher-Order Utility | `100%` ✅ |
 | 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `In Progress` 🛠️ |
 
 ---
@@ -488,7 +489,7 @@ npm install
 
 ---
 
-### 🚀 14. Production Backend Setup & MongoDB Connection (`Node/03_Project`)
+### 🚀 14. Production Backend Architecture, API Response & Error Handling (`Node/03_Project`)
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="30" height="30"/>
@@ -500,13 +501,27 @@ npm install
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
 </p>
 
-A production-grade backend setup implementing clean database connection architecture with **MongoDB Atlas**, **Mongoose**, **Express.js**, and **dotenv**. Includes in-depth network & DNS debugging for cloud database connections.
+A production-grade backend architecture implementing modular database connections with **MongoDB Atlas**, standard Express middleware pipelines, centralized **Custom API Error Handling**, uniform **API Response structuring**, and higher-order **Async Request Handlers**.
 
-* **Key Concepts & Implementations:**
-  * **Modular DB Connection Architecture (`src/db/index.js`):** Encapsulated database connection logic inside an `async/await` function returning connection instance details (`connectionInstance.connection.host`) and binding error listeners to Express app.
-  * **Constants & Environment Management:** Storing database names in `constants.js` and securely managing environment secrets (`MONGODB_URI`, `PORT`) with `dotenv`.
-  * **Connection Debugging & Scheme Handling:** Diagnosed and resolved `MongoParseError` by ensuring `dotenv.config()` loads before database initialization.
-  * **DNS SRV Resolution Troubleshooting:** Resolved `querySrv ECONNREFUSED` issues on local networks by configuring Google Public DNS (`8.8.8.8`, `8.8.4.4`) via Node's `node:dns` module to resolve MongoDB Atlas SRV cluster records reliably.
+* **Architectural & Utility Breakdown:**
+  * 🗄️ **Modular DB Connection (`src/db/index.js` & `src/index.js`):** Encapsulated database connection logic inside an `async/await` function returning connection instance details (`connectionInstance.connection.host`) and handling server initialization through `.then().catch()` lifecycle listeners.
+  * 🌐 **DNS SRV Troubleshooting (`node:dns`):** Resolved local network `querySrv ECONNREFUSED` issues with MongoDB Atlas clusters by configuring Google Public DNS servers (`8.8.8.8`, `8.8.4.4`).
+  * 🛡️ **Express Middleware Pipeline (`src/app.js`):**
+    * `cors`: Whitelisting authorized frontend domains (`CORS_ORIGIN`) with support for secure credentials.
+    * `express.json({ limit: "16kb" })`: Parsing incoming JSON payloads with safe body size limits.
+    * `express.urlencoded({ extended: true, limit: "16kb" })`: Handling complex URL-encoded form data.
+    * `express.static("public")`: Serving public static assets (images, favicon, PDFs).
+    * `cookie-parser`: Securely parsing and managing client request cookies.
+  * ⚠️ **Custom Error Handling Class (`src/utils/ApiError.js`):**
+    * Extends native JavaScript `Error` class for consistent, structured error handling across the entire application.
+    * Enforces standard properties: `statusCode`, `message`, `data: null`, `success: false`, `errors: []`.
+    * Captures accurate stack traces for production vs. development debugging via `Error.captureStackTrace(this, this.constructor)`.
+  * ✨ **Standardized API Response Class (`src/utils/ApiResponse.js`):**
+    * Standardized response structure for all controller endpoints: `{ statusCode, data, message, success }`.
+    * Dynamically sets `success = statusCode < 400` to ensure uniform response formats for frontend consumers.
+  * 🔄 **Async Route Handler Wrapper (`src/utils/asyncHandler.js`):**
+    * Higher-Order Function (HOF) wrapping asynchronous controller logic to eliminate repetitive `try-catch` blocks throughout route handlers.
+    * Automatically forwards rejected promises/errors to Express's global error middleware via `Promise.resolve(fn(req, res, next)).catch((err) => next(err))`.
 
 #### 🛠️ How to run locally:
 
@@ -528,4 +543,3 @@ npm run dev
 ---
 
 💻 *Maintained with dedication by [Harsh Pratap Singh Rathore](https://github.com/harsh-pratap-singh-rathore)*
-

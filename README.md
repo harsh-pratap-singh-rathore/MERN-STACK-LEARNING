@@ -61,7 +61,7 @@
 | `Node/01_BASICNODE` | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
 | `Node/02_Backend_Frontend` | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
 | `Node/mongoose` | Mongoose + MongoDB | Data Modeling in NoSQL, Schemas, field validations, relational references (`ObjectId`, `ref`), timestamps, sub-documents (`User`, `Todo`, `SubTodo`) |
-| `Node/03_Project` 🚀 | Express.js + MongoDB + Mongoose | Production Backend Architecture, DB Connection & DNS SRV Resolution, Express Middlewares, Custom `ApiError` & `ApiResponse`, `asyncHandler` Wrapper |
+| `Node/03_Project` 🚀 | Express.js + MongoDB + Mongoose + JWT + Bcrypt | Production Backend Architecture, DB Connection & DNS SRV Resolution, Express Middlewares, Custom `ApiError` & `ApiResponse`, `asyncHandler` Wrapper, User & Video Data Models, `bcrypt` Password Encryption Pre-Save Hooks, JWT Access/Refresh Tokens, Aggregation Pagination Plugin |
 
 ---
 
@@ -522,6 +522,16 @@ A production-grade backend architecture implementing modular database connection
   * 🔄 **Async Route Handler Wrapper (`src/utils/asyncHandler.js`):**
     * Higher-Order Function (HOF) wrapping asynchronous controller logic to eliminate repetitive `try-catch` blocks throughout route handlers.
     * Automatically forwards rejected promises/errors to Express's global error middleware via `Promise.resolve(fn(req, res, next)).catch((err) => next(err))`.
+  * 👤 **Production Data Models & Schema Design (`src/Models/`):**
+    * **User Schema (`user.model.js`):** Designed complete user profile models with strict indexing and formatting (`unique`, `lowercase`, `trim`, `index`), media links (`avatar`, `coverImage`), and relational arrays (`watchHistory` referencing `Video`).
+    * **Video Schema (`video.model.js`):** Media document schema managing video metadata (`videoFile`, `thumbnail`, `title`, `description`, `duration`, `views`, `isPublished`) and author ownership (`owner` referencing `User`).
+    * **Aggregation Pagination:** Integrated `mongoose-aggregate-paginate-v2` into the Video schema to enable advanced Mongoose aggregation pipelines and paginated query results.
+  * 🔒 **Password Encryption & Authentication Methods:**
+    * **Mongoose Pre-Save Hook (`bcrypt`):** Automatically hashes passwords with 10 salt rounds before saving (`UserSchema.pre("save")`), checking `this.isModified("password")` to prevent re-hashing unchanged passwords.
+    * **Password Verification Method:** Custom instance method `userSchema.methods.isPasswordCorrect(password)` using `bcrypt.compare`.
+    * **JWT Access & Refresh Token Generation (`jsonwebtoken`):**
+      * `generateAccessToken()`: Signs short-lived payload (`_id`, `email`, `userName`, `fullName`) with `ACCESS_TOKEN_SECRET`.
+      * `generateRefreshToken()`: Signs long-lived session identifier (`_id`) with `REFRESH_TOKEN_SECRET` for secure token refreshment workflows.
 
 #### 🛠️ How to run locally:
 

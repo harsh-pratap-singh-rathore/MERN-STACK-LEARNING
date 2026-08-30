@@ -25,6 +25,7 @@
   [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
   [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
   [![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white)](https://mongoosejs.com/)
+  [![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)](https://cloudinary.com/)
   [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
   [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
   [![MERN Stack](https://img.shields.io/badge/MERN-Stack-green?style=for-the-badge)](https://github.com/harsh-pratap-singh-rathore/MERN-STACK-LEARNING)
@@ -47,27 +48,27 @@
 
 | 📁 Project Folder | ⚡ Tech Stack & Description | 🎯 Key Concepts Covered |
 | :--- | :--- | :--- |
-| **`React/Stack-Cart`** ⭐ | **React E-Commerce UI (Capstone)** | **Flagship Capstone Project combining Routing, Layouts, State, Context & Redux** |
-| `React/Counter-App` | React 19 + Vite | `useState`, boundary validation logic |
-| `React/bg-changer` | React + Inline CSS | Dynamic background switcher, reactive state |
-| `React/reactprops` | React + Tailwind CSS v4 | Reusable Card components, passing & reading props |
-| `React/password-generator` | React + Hooks | `useCallback`, `useEffect`, `useRef`, clipboard API |
-| `React/currency-converter` | React + REST API | Live currency rates API, state synchronization |
-| `React/Routers` | React Router DOM | Client-side routing, `createBrowserRouter`, `<Outlet />`, `<NavLink />` |
-| `React/context-api` | React Context API | Global state, `createContext`, `useContext`, Provider pattern |
-| `React/theme-switcher` | Context API + Tailwind | Light/Dark theme toggle, custom `useTheme` hook, DOM class sync |
-| `React/todo-local-storage` | Context API + LocalStorage | Full CRUD todo app, browser persistence, task filters |
-| `React/Redux-Toolkit-Todo` | Redux Toolkit + Vanilla CSS | Centralized store (`configureStore`), `createSlice`, `useDispatch`, `useSelector` |
-| `Node/01_BASICNODE` | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
-| `Node/02_Backend_Frontend` | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
-| `Node/mongoose` | Mongoose + MongoDB | Data Modeling in NoSQL, Schemas, field validations, relational references (`ObjectId`, `ref`), timestamps, sub-documents (`User`, `Todo`, `SubTodo`) |
-| `Node/03_Project` 🚀 | Express.js + MongoDB + Mongoose + JWT + Bcrypt | Production Backend Architecture, DB Connection & DNS SRV Resolution, Express Middlewares, Custom `ApiError` & `ApiResponse`, `asyncHandler` Wrapper, User & Video Data Models, `bcrypt` Password Encryption Pre-Save Hooks, JWT Access/Refresh Tokens, Aggregation Pagination Plugin |
+| **[`React/Stack-Cart`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/Stack-Cart)** ⭐ | **React E-Commerce UI (Capstone)** | **Flagship Capstone Project combining Routing, Layouts, State, Context & Redux** |
+| [`React/Counter-App`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/Counter-App) | React 19 + Vite | `useState`, boundary validation logic |
+| [`React/bg-changer`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/bg-changer) | React + Inline CSS | Dynamic background switcher, reactive state |
+| [`React/reactprops`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/reactprops) | React + Tailwind CSS v4 | Reusable Card components, passing & reading props |
+| [`React/password-generator`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/password-generator) | React + Hooks | `useCallback`, `useEffect`, `useRef`, clipboard API |
+| [`React/currency-converter`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/currency-converter) | React + REST API | Live currency rates API, state synchronization |
+| [`React/Routers`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/Routers) | React Router DOM | Client-side routing, `createBrowserRouter`, `<Outlet />`, `<NavLink />` |
+| [`React/context-api`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/context-api) | React Context API | Global state, `createContext`, `useContext`, Provider pattern |
+| [`React/theme-switcher`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/theme-switcher) | Context API + Tailwind | Light/Dark theme toggle, custom `useTheme` hook, DOM class sync |
+| [`React/todo-local-storage`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/todo-local-storage) | Context API + LocalStorage | Full CRUD todo app, browser persistence, task filters |
+| [`React/Redux-Toolkit-Todo`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/React/Redux-Toolkit-Todo) | Redux Toolkit + Vanilla CSS | Centralized store (`configureStore`), `createSlice`, `useDispatch`, `useSelector` |
+| [`Node/01_BASICNODE`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/01_BASICNODE) | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
+| [`Node/02_Backend_Frontend`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/02_Backend_Frontend) | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
+| [`Node/mongoose`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/mongoose) | Mongoose + MongoDB | Data Modeling in NoSQL, Schemas, field validations, relational references (`ObjectId`, `ref`), timestamps, sub-documents (`User`, `Todo`, `SubTodo`, `Ecommerce`) |
+| [`Node/03_Project`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/03_Project) 🚀 | Express.js + MongoDB + Mongoose + JWT + Bcrypt + Multer + Cloudinary | Production Backend Architecture, DB Connection & DNS SRV Resolution, Express Middlewares, Custom `ApiError` & `ApiResponse`, `asyncHandler` Wrapper, User & Video Data Models, `bcrypt` Password Encryption Pre-Save Hooks, JWT Access/Refresh Tokens, Aggregation Pagination Plugin, **File Uploading Pipeline (Multer DiskStorage & Cloudinary CDN Integration with Auto-Cleanup)** |
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-> ### 🎉 Status: REACT MODULES COMPLETED & CAPSTONE IN PROGRESS! 🚀
+> ### 🎉 Status: REACT MODULES COMPLETED & BACKEND MEDIA ARCHITECTURE IN PROGRESS! 🚀
 
 | Phase | Module | Topics Covered / Planned | Status |
 | :---: | :--- | :--- | :---: |
@@ -78,6 +79,8 @@
 | 🟢 | **Node.js & Express.js** | First Express Server, Environment Variables (`dotenv`), REST API routes, Frontend-Backend Integration, Middlewares | `100%` ✅ |
 | 🟢 | **MongoDB & Mongoose** | Data Modeling, Schemas, MongoDB Atlas Connection Architecture, Connection Debugging & DNS resolution | `100%` ✅ |
 | 🟢 | **Production API Architecture** | Custom `ApiError` class, Standardized `ApiResponse`, `asyncHandler` Higher-Order Utility | `100%` ✅ |
+| 🟢 | **Auth & Cryptography** | Bcrypt Password Hashing, Pre-Save Hooks, JWT Access & Refresh Token Signatures | `100%` ✅ |
+| 🟢 | **File Uploading & Media Management** | Multer Disk Storage, Cloudinary API Integration, Local File Cleanup (`fs.unlinkSync`) | `100%` ✅ |
 | 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `In Progress` 🛠️ |
 
 ---
@@ -318,7 +321,6 @@ A feature-complete Light/Dark Theme Switcher application built with **React 19**
   * **Exported Provider:** Exporting `ThemeContext.Provider` as `ThemeProvider` for cleaner context wrapper syntax.
   * **Custom Hook (`useTheme`):** Encapsulating `useContext(ThemeContext)` in a custom `useTheme()` hook for clean, single-import consumption across components.
   * **DOM Synchronization with `useEffect`:** React side-effect hook automatically syncs theme state (`"light"` / `"dark"`) with the root `<html>` element's class list to trigger Tailwind's `dark:...` utility classes seamlessly.
-  * **Beginner-Friendly React Code:** `useState` hook manages theme state, and `toggleTheme` click handler drives smooth UI transitions.
 
 #### 🛠️ How to run locally:
 
@@ -349,7 +351,6 @@ A full-featured task management web application built with **React 19**, **Conte
   * **Full CRUD Operations:** `addtodo`, `updatetodo`, `deletetodo`, and `toogletodo` methods supplied via custom Context (`useTodo`).
   * **Inline Editing & Toggle:** Editable inputs toggleable per todo item with save/lock controls and completion checkboxes.
   * **Task Filtering & Counter:** Filter tasks by **All**, **Active**, or **Completed** statuses with dynamic count badges and empty states.
-  * **Modern UI:** Built with custom glassmorphism design system, dark mode palette, and smooth micro-animations.
 
 #### 🛠️ How to run locally:
 
@@ -378,7 +379,6 @@ A task management application built with **React** and **Redux Toolkit** for cen
   * Creating application slices with `createSlice` (`todoslice.js`).
   * Dispatching action creators with `useDispatch` (`addTodo`, `removeTodo`).
   * Extracting slice state from the store using `useSelector`.
-  * Custom dark mode UI built with Vanilla CSS.
 
 #### 🛠️ How to run locally:
 
@@ -466,19 +466,17 @@ npm run dev
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
 </p>
 
-An architectural study and hands-on implementation of **Data Modeling in MongoDB using Mongoose (ODM)**. Mastered schema design, database-level validation, automatic timestamping, and relational modeling (1-to-Many and Parent-Child relationships) using ObjectId references.
+An architectural study and hands-on implementation of **Data Modeling in MongoDB using Mongoose (ODM)**. Mastered schema design, database-level validation, automatic timestamping, and relational modeling (1-to-Many and Parent-Child relationships) using ObjectId references across both Todo and E-Commerce domains.
 
-* **Data Models Breakdown (`models/todos/`):**
-  * 👤 **User Model (`users.model.js`):** Identity schema storing `username`, `email`, and `password`. Enforces strict validation rules including `required: true`, `unique: true`, `lowercase: true`, and automated tracking via `{ timestamps: true }`.
-  * 📋 **Todo Model (`todo.model.js`):** Primary task model storing `content`, completion status (`completed: Boolean`, default `false`), creator relationship via `createdBy` (`mongoose.Schema.Types.ObjectId` referencing `"User"`), and an array of nested sub-task references (`subtodo: [{ type: mongoose.Schema.Types.ObjectId, ref: "subtodo" }]`).
-  * 📌 **Sub-Todo Model (`sub-todo.model.js`):** Modular sub-task schema storing `content`, `complet` flag, author reference (`createdBy` referencing `"User"`), and timestamps.
-
-* **Key Concepts Covered:**
-  * **Schema Definition:** Declaring robust schemas using `new mongoose.Schema({ ... }, { timestamps: true })`.
-  * **Validation & Constraints:** Enforcing schema types (`String`, `Boolean`, `ObjectId`), mandatory flags (`required: true`), uniqueness (`unique: true`), case sanitization (`lowercase: true`), and defaults (`default: false`).
-  * **Relational Modeling in NoSQL:** Linking collections using `mongoose.Schema.Types.ObjectId` and `ref` to maintain clean normalized data structures.
-  * **Sub-Document Arrays:** Referencing multiple child documents inside an array in parent schemas (`[ { type: ObjectId, ref: 'subtodo' } ]`).
-  * **Model Registration:** Compiling and exporting Mongoose models using `mongoose.model("ModelName", schema)`.
+* **Data Models Breakdown:**
+  * 📋 **Todo App Domain (`models/todos/`):**
+    * 👤 **User Model (`users.model.js`):** Stores `username`, `email`, and `password` with `required`, `unique`, `lowercase`, and `{ timestamps: true }`.
+    * 📝 **Todo Model (`todo.model.js`):** Primary task model storing `content`, `completed: Boolean`, creator relationship (`createdBy` referencing `User`), and sub-task array (`subtodo` referencing `subtodo`).
+    * 📌 **Sub-Todo Model (`sub-todo.model.js`):** Sub-task schema linking to parent task.
+  * 🛒 **E-Commerce Domain (`models/ecommerece/`):**
+    * 🏷️ **Category Model (`category.model.js`):** Category names.
+    * 📦 **Product Model (`product.model.js`):** Storing product details, price, stock, and relational references to `Category` and owner `User`.
+    * 🛍️ **Order Model (`order.model.js`):** Embedded `orderItemSchema` array, total order price, customer reference, address, and status `enum: ["PENDING", "CANCELLED", "DELIVERED"]`.
 
 #### 🛠️ Dependencies & Setup:
 
@@ -489,7 +487,7 @@ npm install
 
 ---
 
-### 🚀 14. Production Backend Architecture, API Response & Error Handling (`Node/03_Project`)
+### 🚀 14. Production Backend Architecture, Authentication & File Uploading (`Node/03_Project`)
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="30" height="30"/>
@@ -499,9 +497,11 @@ npm install
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg" alt="Express" width="30" height="30"/>
   &nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white" alt="Cloudinary" height="30"/>
 </p>
 
-A production-grade backend architecture implementing modular database connections with **MongoDB Atlas**, standard Express middleware pipelines, centralized **Custom API Error Handling**, uniform **API Response structuring**, and higher-order **Async Request Handlers**.
+A production-grade backend architecture implementing modular database connections with **MongoDB Atlas**, standard Express middleware pipelines, centralized **Custom API Error Handling**, uniform **API Response structuring**, higher-order **Async Request Handlers**, **JWT & Bcrypt Authentication**, and a production **Multer + Cloudinary File Uploading Pipeline**.
 
 * **Architectural & Utility Breakdown:**
   * 🗄️ **Modular DB Connection (`src/db/index.js` & `src/index.js`):** Encapsulated database connection logic inside an `async/await` function returning connection instance details (`connectionInstance.connection.host`) and handling server initialization through `.then().catch()` lifecycle listeners.
@@ -513,25 +513,24 @@ A production-grade backend architecture implementing modular database connection
     * `express.static("public")`: Serving public static assets (images, favicon, PDFs).
     * `cookie-parser`: Securely parsing and managing client request cookies.
   * ⚠️ **Custom Error Handling Class (`src/utils/ApiError.js`):**
-    * Extends native JavaScript `Error` class for consistent, structured error handling across the entire application.
-    * Enforces standard properties: `statusCode`, `message`, `data: null`, `success: false`, `errors: []`.
-    * Captures accurate stack traces for production vs. development debugging via `Error.captureStackTrace(this, this.constructor)`.
+    * Extends native JavaScript `Error` class for consistent, structured error handling across the entire application (`statusCode`, `message`, `data: null`, `success: false`, `errors: []`).
+    * Captures accurate stack traces via `Error.captureStackTrace(this, this.constructor)`.
   * ✨ **Standardized API Response Class (`src/utils/ApiResponse.js`):**
-    * Standardized response structure for all controller endpoints: `{ statusCode, data, message, success }`.
-    * Dynamically sets `success = statusCode < 400` to ensure uniform response formats for frontend consumers.
+    * Standardized response structure: `{ statusCode, data, message, success }` where `success = statusCode < 400`.
   * 🔄 **Async Route Handler Wrapper (`src/utils/asyncHandler.js`):**
-    * Higher-Order Function (HOF) wrapping asynchronous controller logic to eliminate repetitive `try-catch` blocks throughout route handlers.
-    * Automatically forwards rejected promises/errors to Express's global error middleware via `Promise.resolve(fn(req, res, next)).catch((err) => next(err))`.
+    * Higher-Order Function (HOF) wrapping asynchronous controller logic to eliminate repetitive `try-catch` blocks: `Promise.resolve(fn(req, res, next)).catch(next)`.
   * 👤 **Production Data Models & Schema Design (`src/Models/`):**
-    * **User Schema (`user.model.js`):** Designed complete user profile models with strict indexing and formatting (`unique`, `lowercase`, `trim`, `index`), media links (`avatar`, `coverImage`), and relational arrays (`watchHistory` referencing `Video`).
+    * **User Schema (`user.model.js`):** User profile models with strict indexing and formatting (`unique`, `lowercase`, `trim`, `index`), media URLs (`avatar`, `coverImage`), and relational arrays (`watchHistory` referencing `Video`).
     * **Video Schema (`video.model.js`):** Media document schema managing video metadata (`videoFile`, `thumbnail`, `title`, `description`, `duration`, `views`, `isPublished`) and author ownership (`owner` referencing `User`).
-    * **Aggregation Pagination:** Integrated `mongoose-aggregate-paginate-v2` into the Video schema to enable advanced Mongoose aggregation pipelines and paginated query results.
-  * 🔒 **Password Encryption & Authentication Methods:**
-    * **Mongoose Pre-Save Hook (`bcrypt`):** Automatically hashes passwords with 10 salt rounds before saving (`UserSchema.pre("save")`), checking `this.isModified("password")` to prevent re-hashing unchanged passwords.
-    * **Password Verification Method:** Custom instance method `userSchema.methods.isPasswordCorrect(password)` using `bcrypt.compare`.
-    * **JWT Access & Refresh Token Generation (`jsonwebtoken`):**
-      * `generateAccessToken()`: Signs short-lived payload (`_id`, `email`, `userName`, `fullName`) with `ACCESS_TOKEN_SECRET`.
-      * `generateRefreshToken()`: Signs long-lived session identifier (`_id`) with `REFRESH_TOKEN_SECRET` for secure token refreshment workflows.
+    * **Aggregation Pagination:** Integrated `mongoose-aggregate-paginate-v2` into Video schema for complex query pagination.
+  * 🔒 **Password Encryption & JWT Authentication:**
+    * **Mongoose Pre-Save Hook (`bcrypt`):** Automatically hashes passwords with 10 salt rounds before saving (`UserSchema.pre("save")`), checking `this.isModified("password")`.
+    * **Password Verification:** Custom instance method `userSchema.methods.isPasswordCorrect(password)` using `bcrypt.compare`.
+    * **JWT Access & Refresh Tokens:** `generateAccessToken()` (identity payload) and `generateRefreshToken()` (session refresh).
+  * 📤 **File Uploading Pipeline (Multer + Cloudinary):**
+    * **Multer Middleware (`Middlewares/multer.js`):** Uses `multer.diskStorage` to intercept multipart uploads and stage incoming files to `./public/temp` while preserving original filenames.
+    * **Cloudinary Upload Utility (`src/utils/cloudinary.js`):** Uploads files from local temp storage to Cloudinary CDN via `cloudinary.uploader.upload(localPath)`.
+    * **Automatic Storage Cleanup (`fs.unlinkSync`):** Deletes local temporary files synchronously if cloud uploading fails, preventing server disk leaks.
 
 #### 🛠️ How to run locally:
 
@@ -546,8 +545,8 @@ npm run dev
 ## 🛠️ Tech Stack & Tools
 
 * **Frontend:** React, Redux Toolkit, React Router DOM, JavaScript (ES6+), HTML5, CSS3, Vite, Tailwind CSS
-* **Backend:** Node.js, Express.js
-* **Database & ODM:** MongoDB, Mongoose (Data Modeling, Schemas & Relational References)
+* **Backend:** Node.js, Express.js, Multer, Cloudinary, Bcrypt, JSON Web Tokens (JWT), Cookie-Parser, CORS
+* **Database & ODM:** MongoDB Atlas, Mongoose (Data Modeling, Schemas, Aggregation Pipelines)
 * **Version Control:** Git, GitHub
 
 ---

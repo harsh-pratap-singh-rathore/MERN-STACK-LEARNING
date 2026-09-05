@@ -13,12 +13,12 @@ const registerUser = asyncHandler(async (req , res) => {
     //create object in DB 
     //print the response 
 
-    const {username , email , fullName , password} = req.body
+    const {username , email , fullName , password} = req.body || {}
     console.log("EMAIL IS : ", {email});
 
     if (
         [fullName , email , username , password].some((field) => 
-        field?.trim() === "")
+        !field || field.trim() === "")
     ) {
         throw new ApiError(400 , "All Fields Are Mandatory!!! ")
     }

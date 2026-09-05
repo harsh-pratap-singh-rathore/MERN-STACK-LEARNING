@@ -14,4 +14,21 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+// routes import
+import userRouter from "./Routes/User.routes.js"
+
+// routes declaration
+app.use("/api/v1/users", userRouter)
+
+// global error handling middleware
+app.use((err, req, res, next) => {
+    const statusCode = err.statusCode || 500;
+    return res.status(statusCode).json({
+        statusCode,
+        success: false,
+        message: err.message || "Internal Server Error",
+        errors: err.errors || []
+    });
+});
+
 export { app }

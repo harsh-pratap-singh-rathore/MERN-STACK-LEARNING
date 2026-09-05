@@ -9,6 +9,8 @@
   &nbsp;
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="35" height="35"/>
   &nbsp;
+  <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens" alt="JWT" height="35"/>
+  &nbsp;
   <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white" alt="Cloudinary" height="35"/>
 </p>
 
@@ -18,18 +20,23 @@ A production-grade backend engine engineered using **Node.js**, **Express.js**, 
 
 ## 🏗️ Project Architecture & Directory Structure
 
-```
+```text
 Node/03_Project/
-├── Middlewares/
-│   └── multer.js              # Multer diskStorage middleware for local multipart handling
 ├── public/
-│   └── temp/                  # Temporary staging directory for incoming file uploads
+│   └── temp/                  # Temporary staging directory for incoming file uploads (.gitkeep)
 ├── src/
+│   ├── Controllers/
+│   │   └── User.controller.js # User registration, login, logout & token refresh logic
 │   ├── db/
-│   │   └── index.js           # Modular MongoDB connection with DNS SRV resolver
+│   │   └── index.js           # Modular MongoDB connection with connection instance logging
+│   ├── Middlewares/
+│   │   ├── auth.middleware.js # JWT verification middleware protecting private endpoints
+│   │   └── multer.js          # Multer diskStorage middleware for local multipart handling
 │   ├── Models/
 │   │   ├── user.model.js      # User schema, bcrypt hooks, JWT generators & methods
 │   │   └── video.model.js     # Video schema with mongoose-aggregate-paginate-v2
+│   ├── Routes/
+│   │   └── User.routes.js     # User routing declarations (/register, /login, /logout, etc.)
 │   ├── utils/
 │   │   ├── ApiError.js        # Standardized custom error class extending Error
 │   │   ├── ApiResponse.js      # Uniform API response structure class
@@ -49,25 +56,22 @@ Node/03_Project/
 
 ## ⚡ Key Modules & Architectural Highlights
 
-### 1. 🗄️ Modular Database Connection & DNS SRV Resolution (`src/db/index.js`)
+### 1. 🗄️ Modular Database Connection (`src/db/index.js`)
 * **Async Connection:** Encapsulated MongoDB connection inside an isolated `connectDB` asynchronous function.
 * **Connection Host Logging:** Extracts `connectionInstance.connection.host` upon successful connection to verify the active cluster target.
-* **DNS Resolution Fix:** Solves common Windows / ISP `querySrv ECONNREFUSED` issues with MongoDB Atlas `mongodb+srv://` connection strings by programmatically configuring public DNS servers (`8.8.8.8`, `8.8.4.4`) via Node's native `node:dns` module.
+* **DNS Resolution Fix:** Solves common Windows / ISP `querySrv ECONNREFUSED` issues with MongoDB Atlas `mongodb+srv://` connection strings by programmatically configuring public DNS servers (`8.8.8.8`, `8.8.4.4`) via Node's native `node:dns` module in `src/index.js`.
 * **Fail-Fast Process Termination:** Catches connection errors and exits the process immediately with `process.exit(1)` to prevent running a broken server.
 
 ```javascript
 import mongoose from "mongoose";
 import { DB_NAME } from "../constants.js";
-import dns from "node:dns";
-
-dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 const connectDB = async () => {
     try {
         const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
-        console.log(`\n MongoDB Connected! DB HOST: ${connectionInstance.connection.host}`);
+        console.log(`Connection Successful on HOST : ${connectionInstance.connection.host}`);
     } catch (error) {
-        console.error("MONGODB CONNECTION FAILED: ", error);
+        console.log("ERROR IS :", error);
         process.exit(1);
     }
 };
@@ -82,15 +86,16 @@ Configured industry-standard middlewares to ensure data sanitization, size throt
 * **`cors`**: Secure cross-origin resource sharing configured with `process.env.CORS_ORIGIN` and `credentials: true`.
 * **`express.json({ limit: "16kb" })`**: Limits incoming JSON request payload sizes to defend against Denial-of-Service (DoS) attacks.
 * **`express.urlencoded({ extended: true, limit: "16kb" })`**: Parses complex URL-encoded data including nested objects.
-* **`express.static("public")`**: Serves static assets such as images, temp uploads, and favicon files.
-* **`cookie-parser`**: Enables reading and writing signed cookies from user requests (`req.cookies`).
+* **`express.static("public")`**: Serves static assets such as images and temp uploads.
+* **`cookie-parser`**: Enables reading and writing secure HTTP-only cookies from user requests (`req.cookies`).
+* **Global Error Middleware**: Intercepts unhandled operational errors and formats `ApiError` instances into clean, predictable JSON responses.
 
 ---
 
 ### 3. ⚠️ Centralized Custom Error Handling (`src/utils/ApiError.js`)
 A standardized error class extending JavaScript's native `Error` to ensure predictable error payloads across all endpoints:
 * Consistent properties: `statusCode`, `data: null`, `message`, `success: false`, and `errors: []`.
-* Automated stack trace tracking using `Error.captureStackTrace(this, this.constructor)` for precise debugging in development while maintaining security in production.
+* Automated stack trace tracking using `Error.captureStackTrace(this, this.constructor)`.
 
 ```javascript
 class ApiError extends Error {
@@ -109,6 +114,7 @@ class ApiError extends Error {
         }
     }
 }
+export { ApiError };
 ```
 
 ---
@@ -145,7 +151,7 @@ export { asyncHandler };
   * Employs `this.isModified("password")` guard clause so unmodified passwords are not re-hashed during profile updates.
 * **Password Verification Method:** Custom instance method `userSchema.methods.isPasswordCorrect` utilizing `bcrypt.compare`.
 * **JWT Access & Refresh Token Methods:**
-  * `generateAccessToken()`: Generates short-lived JWT holding identity payload (`_id`, `email`, `userName`, `fullName`).
+  * `generateAccessToken()`: Generates short-lived JWT holding identity payload (`_id`, `email`, `username`, `fullName`).
   * `generateRefreshToken()`: Generates long-lived JWT containing only `_id` to power refresh token rotation strategies.
 
 #### 🎥 **Video Model (`video.model.js`)**
@@ -157,7 +163,7 @@ export { asyncHandler };
 
 ### 7. 📤 File Uploading Pipeline (Multer + Cloudinary)
 
-```
+```text
 [ Client Request with multipart/form-data ]
                     │
                     ▼
@@ -173,11 +179,8 @@ export { asyncHandler };
 [ Returns Cloudinary URL ]  [ Removes temp file via fs.unlinkSync ]
 ```
 
-#### 📁 **Multer Disk Storage Middleware (`Middlewares/multer.js`)**
-Multer intercepts `multipart/form-data` uploads and stages incoming files to the local disk before cloud transmission:
-* **Destination:** `./public/temp`
-* **Filename:** Retains `file.originalname` for traceability.
-
+#### 📁 **Multer Disk Storage Middleware (`src/Middlewares/multer.js`)**
+Intersects incoming `multipart/form-data` uploads and stages incoming files to `./public/temp`:
 ```javascript
 import multer from "multer";
 
@@ -194,33 +197,49 @@ export const upload = multer({ storage });
 ```
 
 #### ☁️ **Cloudinary Upload Utility (`src/utils/cloudinary.js`)**
-Uploads locally staged files to Cloudinary CDN and safely cleans up local disk storage:
-* **Cloudinary Configuration:** Initialized with `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, and `CLOUDINARY_API_SECRET`.
-* **Safe Cleanup (`fs.unlinkSync`):** If cloud upload encounters an error or network timeout, the temporary file on local disk is deleted synchronously to prevent server storage leaks.
+* Connects to Cloudinary using runtime environment credentials.
+* Deletes the local temporary file (`fs.unlinkSync`) immediately after successful or failed upload to prevent disk storage leaks.
+
+---
+
+### 8. 🔒 JWT Authentication Middleware (`src/Middlewares/auth.middleware.js`)
+
+Secures private routes by verifying JSON Web Tokens from either incoming request cookies or the standard `Authorization` header:
 
 ```javascript
-import { v2 as cloudinary } from "cloudinary";
-import fs from "fs";
-
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-const uploadToCloudinary = async (localPath) => {
+export const verifyJWT = asyncHandler(async (req, res, next) => {
     try {
-        if (!localPath) return null;
-        const response = await cloudinary.uploader.upload(localPath);
-        return response;
-    } catch (error) {
-        fs.unlinkSync(localPath); // Remove the locally saved temp file on failure
-        return null;
-    }
-};
+        const token = req.cookies?.accessToken || req.header("Authorization")?.replace("Bearer ", "");
 
-export { uploadToCloudinary };
+        if (!token) {
+            throw new ApiError(401, "Unauthorized request");
+        }
+
+        const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+        const user = await User.findById(decodedToken?._id).select("-password -refreshToken");
+
+        if (!user) {
+            throw new ApiError(401, "Invalid Access Token");
+        }
+
+        req.user = user;
+        next();
+    } catch (error) {
+        throw new ApiError(401, error?.message || "Invalid access token");
+    }
+});
 ```
+
+---
+
+## 📡 API Endpoints Reference (`/api/v1/users`)
+
+| Method | Endpoint | Description | Auth Required | Body / Format |
+| :--- | :--- | :--- | :---: | :--- |
+| `POST` | `/register` | Register new user with avatar & coverImage | ❌ | `multipart/form-data` |
+| `POST` | `/login` | Authenticate user & issue Access/Refresh tokens in HTTP-only cookies | ❌ | `JSON` or `form-data` |
+| `POST` | `/logout` | Invalidate user session & clear cookies | ✅ (`verifyJWT`) | None |
+| `POST` | `/refresh-token` | Rotate & issue fresh Access and Refresh tokens | ❌ / Cookie | Cookie or `{ refreshToken }` |
 
 ---
 

@@ -35,8 +35,14 @@
 ---
 
 > [!IMPORTANT]  
-> ⭐ **FLAGSHIP CAPSTONE PROJECT STARTED: 🛒 Stack-Cart (E-Commerce UI)**  
-> I have officially launched **Stack-Cart** — a major capstone E-Commerce frontend web app where I am putting everything I've learned in React (Routing, Layouts, State, Hooks, Context API, Redux Toolkit, and UI Components) into action!
+> ### 🏆 FULL-STACK MILESTONE: BASIC MERN COMPLETED!
+> **COMPLETED BASIC MERN WITH THIS AND THIS AND THISS !!**
+>
+> 🗓️ **START DATE :** `21-July-2026`  
+> 🏁 **END DATE :** `06-September-2026`  
+>
+> 💬 *"I DIDNT END HERE | HERE I START !"*  
+> *Mastered the full foundation from React state, routing, context, & Redux to Node.js backend micro-architecture, file upload pipelines, 7 interconnected MongoDB models, and multi-stage aggregation sub-pipelines!*
 
 > [!NOTE]  
 > 🌟 **Welcome to my MERN Stack Learning Repository!**  
@@ -62,13 +68,13 @@
 | [`Node/01_BASICNODE`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/01_BASICNODE) | Node.js + Express.js | First Express server, routes (`/`, `/login`), `dotenv` config, ES module setup |
 | [`Node/02_Backend_Frontend`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/02_Backend_Frontend) | React 19 + Express.js + Axios | Connecting Frontend with Backend, CORS handling, Vite Proxy, Axios HTTP requests |
 | [`Node/mongoose`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/mongoose) | Mongoose + MongoDB | Data Modeling in NoSQL, Schemas, field validations, relational references (`ObjectId`, `ref`), timestamps, sub-documents (`User`, `Todo`, `SubTodo`, `Ecommerce`) |
-| [`Node/03_Project`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/03_Project) 🚀 | Express.js + MongoDB + Mongoose + JWT + Bcrypt + Multer + Cloudinary | Production Backend Architecture, DB Connection & DNS SRV Resolution, Express Middlewares, Custom `ApiError` & `ApiResponse`, `asyncHandler` Wrapper, User & Video Data Models, `bcrypt` Password Encryption Pre-Save Hooks, JWT Access/Refresh Tokens, Aggregation Pagination Plugin, **File Uploading Pipeline (Multer DiskStorage & Cloudinary CDN Integration with Auto-Cleanup)** |
+| [`Node/03_Project`](file:///c:/Users/Harsh%20Rathore/Desktop/NODE/Study/MERN/Node/03_Project) 🚀 | Express.js + MongoDB + Mongoose + JWT + Bcrypt + Multer + Cloudinary | **Complete Production Backend Engine:** 7 Data Models (`User`, `Video`, `Subscription`, `Playlist`, `Like`, `Tweet`, `Comment`), 11 REST API Routes, Aggregation Pipelines (Channel Profile & Nested Sub-Pipelines for Watch History), JWT Auth, File Uploading |
 
 ---
 
 ## 🗺️ Learning Roadmap
 
-> ### 🎉 Status: REACT MODULES COMPLETED & BACKEND MEDIA ARCHITECTURE IN PROGRESS! 🚀
+> ### 🎉 Status: 🏆 BASIC MERN STACK COMPLETED! (July 21, 2026 – September 6, 2026) 🚀
 
 | Phase | Module | Topics Covered / Planned | Status |
 | :---: | :--- | :--- | :---: |
@@ -81,6 +87,8 @@
 | 🟢 | **Production API Architecture** | Custom `ApiError` class, Standardized `ApiResponse`, `asyncHandler` Higher-Order Utility | `100%` ✅ |
 | 🟢 | **Auth & Cryptography** | Bcrypt Password Hashing, Pre-Save Hooks, JWT Access & Refresh Token Signatures | `100%` ✅ |
 | 🟢 | **File Uploading & Media Management** | Multer Disk Storage, Cloudinary API Integration, Local File Cleanup (`fs.unlinkSync`) | `100%` ✅ |
+| 🟢 | **Complete Schema Ecosystem** | 7 Production Models: User, Video, Subscription, Playlist, Like, Tweet, Comment | `100%` ✅ |
+| 🟢 | **Aggregation & Sub-Pipelines** | Multi-Stage Aggregations, `$lookup` joins, `$addFields`, `$cond`/`$in`, nested sub-pipelines inside `$lookup` | `100%` ✅ |
 | 🟡 | **Full-Stack Projects** | Production E-Commerce & Full-Stack MERN Web Applications | `In Progress` 🛠️ |
 
 ---
@@ -487,7 +495,7 @@ npm install
 
 ---
 
-### 🚀 14. Production Backend Architecture, Authentication & File Uploading (`Node/03_Project`)
+### 🚀 14. Production Backend Architecture, Models & Aggregation Pipelines (`Node/03_Project`)
 
 <p align="left">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="30" height="30"/>
@@ -499,38 +507,47 @@ npm install
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="JavaScript" width="30" height="30"/>
   &nbsp;
   <img src="https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white" alt="Cloudinary" height="30"/>
+  &nbsp;
+  <img src="https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens" alt="JWT" height="30"/>
 </p>
 
-A production-grade backend architecture implementing modular database connections with **MongoDB Atlas**, standard Express middleware pipelines, centralized **Custom API Error Handling**, uniform **API Response structuring**, higher-order **Async Request Handlers**, **JWT & Bcrypt Authentication**, and a production **Multer + Cloudinary File Uploading Pipeline**.
+A production-grade, enterprise-ready backend engine engineered using **Node.js**, **Express.js**, **MongoDB Atlas**, **Mongoose**, **JWT**, **Bcrypt**, **Multer**, and **Cloudinary**. This project establishes the definitive backend standard featuring modular database connectivity, an interconnected 7-schema ecosystem, cryptographic password security, access/refresh token rotation, centralized error handling, standardized API responses, multi-stage **MongoDB Aggregation Pipelines**, and nested **Sub-Pipelines**.
 
 * **Architectural & Utility Breakdown:**
-  * 🗄️ **Modular DB Connection (`src/db/index.js` & `src/index.js`):** Encapsulated database connection logic inside an `async/await` function returning connection instance details (`connectionInstance.connection.host`) and handling server initialization through `.then().catch()` lifecycle listeners.
-  * 🌐 **DNS SRV Troubleshooting (`node:dns`):** Resolved local network `querySrv ECONNREFUSED` issues with MongoDB Atlas clusters by configuring Google Public DNS servers (`8.8.8.8`, `8.8.4.4`).
-  * 🛡️ **Express Middleware Pipeline (`src/app.js`):**
-    * `cors`: Whitelisting authorized frontend domains (`CORS_ORIGIN`) with support for secure credentials.
-    * `express.json({ limit: "16kb" })`: Parsing incoming JSON payloads with safe body size limits.
-    * `express.urlencoded({ extended: true, limit: "16kb" })`: Handling complex URL-encoded form data.
-    * `express.static("public")`: Serving public static assets (images, favicon, PDFs).
-    * `cookie-parser`: Securely parsing and managing client request cookies.
-  * ⚠️ **Custom Error Handling Class (`src/utils/ApiError.js`):**
-    * Extends native JavaScript `Error` class for consistent, structured error handling across the entire application (`statusCode`, `message`, `data: null`, `success: false`, `errors: []`).
-    * Captures accurate stack traces via `Error.captureStackTrace(this, this.constructor)`.
-  * ✨ **Standardized API Response Class (`src/utils/ApiResponse.js`):**
-    * Standardized response structure: `{ statusCode, data, message, success }` where `success = statusCode < 400`.
-  * 🔄 **Async Route Handler Wrapper (`src/utils/asyncHandler.js`):**
-    * Higher-Order Function (HOF) wrapping asynchronous controller logic to eliminate repetitive `try-catch` blocks: `Promise.resolve(fn(req, res, next)).catch(next)`.
-  * 👤 **Production Data Models & Schema Design (`src/Models/`):**
-    * **User Schema (`user.model.js`):** User profile models with strict indexing and formatting (`unique`, `lowercase`, `trim`, `index`), media URLs (`avatar`, `coverImage`), and relational arrays (`watchHistory` referencing `Video`).
-    * **Video Schema (`video.model.js`):** Media document schema managing video metadata (`videoFile`, `thumbnail`, `title`, `description`, `duration`, `views`, `isPublished`) and author ownership (`owner` referencing `User`).
-    * **Aggregation Pagination:** Integrated `mongoose-aggregate-paginate-v2` into Video schema for complex query pagination.
-  * 🔒 **Password Encryption & JWT Authentication:**
-    * **Mongoose Pre-Save Hook (`bcrypt`):** Automatically hashes passwords with 10 salt rounds before saving (`UserSchema.pre("save")`), checking `this.isModified("password")`.
-    * **Password Verification:** Custom instance method `userSchema.methods.isPasswordCorrect(password)` using `bcrypt.compare`.
-    * **JWT Access & Refresh Tokens:** `generateAccessToken()` (identity payload) and `generateRefreshToken()` (session refresh).
-  * 📤 **File Uploading Pipeline (Multer + Cloudinary):**
-    * **Multer Middleware (`Middlewares/multer.js`):** Uses `multer.diskStorage` to intercept multipart uploads and stage incoming files to `./public/temp` while preserving original filenames.
-    * **Cloudinary Upload Utility (`src/utils/cloudinary.js`):** Uploads files from local temp storage to Cloudinary CDN via `cloudinary.uploader.upload(localPath)`.
-    * **Automatic Storage Cleanup (`fs.unlinkSync`):** Deletes local temporary files synchronously if cloud uploading fails, preventing server disk leaks.
+  * 🗄️ **Modular DB Connection (`src/db/index.js` & `src/index.js`):** Encapsulated database connection logic returning host instance details (`connectionInstance.connection.host`) with lifecycle `.then().catch()` listeners and fail-fast process termination.
+  * 🌐 **DNS SRV Troubleshooting (`node:dns`):** Solved Windows / ISP `querySrv ECONNREFUSED` issues with MongoDB Atlas clusters by configuring Google Public DNS servers (`8.8.8.8`, `8.8.4.4`).
+  * 🛡️ **Express Middleware Pipeline (`src/app.js`):** `cors` with credentials, `express.json({ limit: "16kb" })`, `express.urlencoded({ extended: true, limit: "16kb" })`, `express.static("public")`, and `cookie-parser`.
+  * ⚠️ **Custom Error Handling Class (`src/utils/ApiError.js`):** Extends JavaScript `Error` with predictable structure (`statusCode`, `message`, `data: null`, `success: false`, `errors: []`) and automated stack traces.
+  * ✨ **Standardized API Response Class (`src/utils/ApiResponse.js`):** Uniform payload structure `{ statusCode, data, message, success }` where `success = statusCode < 400`.
+  * 🔄 **Async Route Handler Wrapper (`src/utils/asyncHandler.js`):** Higher-Order Function (HOF) wrapping asynchronous controllers: `Promise.resolve(fn(req, res, next)).catch(next)`.
+  * 📦 **Complete 7-Model Data Schema Ecosystem (`src/Models/`):**
+    * 👤 **User (`user.model.js`):** Profile details, strict indexing, avatar/coverImage Cloudinary URLs, `watchHistory` references, pre-save bcrypt hashing hooks, password verification instance methods, and JWT Access/Refresh token generators.
+    * 🎥 **Video (`video.model.js`):** Video file URL, thumbnail URL, metadata, duration, views, owner reference to `User`, and `mongoose-aggregate-paginate-v2` pagination plugin.
+    * 🔔 **Subscription (`subscription.model.js`):** Relational connection between `subscriber` (`User`) and `channel` (`User`).
+    * 📑 **Playlist (`playlist.model.js`):** Playlist name, description, array of `Video` references, and creator `owner` (`User`).
+    * 👍 **Like (`like.model.js`):** Polymorphic likes supporting targets across `video`, `comment`, and `tweet`, bound to `likedBy` (`User`).
+    * 🐦 **Tweet (`tweet.model.js`):** Content and creator `owner` (`User`).
+    * 💬 **Comment (`comment.model.js`):** Comment content, target `video`, creator `owner`, with `mongooseAggregatePaginate` for comment pagination.
+  * ⚡ **Advanced MongoDB Aggregation Pipelines:**
+    * 📊 **Channel Profile Aggregation (`getUserChannelProfile`):** Uses `$match` on username, dual `$lookup` joins on `subscriptions` (for subscribers and subscriptions), `$addFields` with `$size` for dynamic subscriber counts, and `$cond` with `$in` to evaluate if the currently logged-in user is subscribed.
+    * 🔄 **Watch History with Nested Sub-Pipelines (`getWatchHistory`):** Uses `$match` on `_id`, joins `videos` via `$lookup`, and inside the `$lookup` pipeline executes an inner `$lookup` on `users` to populate each video's creator, projecting only safe profile fields (`fullName`, `username`, `avatar`) and flattening via `$first`.
+  * 🔒 **Password Encryption & JWT Authentication:** Pre-save bcrypt hashing (10 rounds), `bcrypt.compare` verification, short-lived Access Tokens, and long-lived Refresh Token rotation.
+  * 📤 **Two-Tier File Upload Pipeline (Multer + Cloudinary):**
+    * **Multer Middleware (`Middlewares/multer.js`):** Multi-part disk storage staging files into `./public/temp`.
+    * **Cloudinary Upload Utility (`src/utils/cloudinary.js`):** Uploads to Cloudinary CDN with automatic synchronous file cleanup (`fs.unlinkSync`) to eliminate local disk leaks.
+
+* **API Endpoints Map (`/api/v1/users`):**
+  * `POST /register`: Multi-part form registration (avatar & cover image)
+  * `POST /login`: Credential validation & HTTP-only cookie token dispatch
+  * `POST /refresh-token`: Token rotation
+  * `POST /logout`: Session invalidation (`verifyJWT`)
+  * `POST /change-password`: Password verification and update (`verifyJWT`)
+  * `GET /current-user`: Current logged-in user details (`verifyJWT`)
+  * `PATCH /update-account`: Update `fullName` and `email` (`verifyJWT`)
+  * `PATCH /avatar`: Update user avatar with Cloudinary upload (`verifyJWT`)
+  * `PATCH /cover-image`: Update cover image with Cloudinary upload (`verifyJWT`)
+  * `GET /c/:username`: Channel profile aggregation (`verifyJWT`)
+  * `GET /history`: Watch history nested sub-pipeline (`verifyJWT`)
 
 #### 🛠️ How to run locally:
 
@@ -546,9 +563,13 @@ npm run dev
 
 * **Frontend:** React, Redux Toolkit, React Router DOM, JavaScript (ES6+), HTML5, CSS3, Vite, Tailwind CSS
 * **Backend:** Node.js, Express.js, Multer, Cloudinary, Bcrypt, JSON Web Tokens (JWT), Cookie-Parser, CORS
-* **Database & ODM:** MongoDB Atlas, Mongoose (Data Modeling, Schemas, Aggregation Pipelines)
+* **Database & ODM:** MongoDB Atlas, Mongoose (Data Modeling, Schemas, Aggregation Pipelines & Sub-Pipelines)
 * **Version Control:** Git, GitHub
 
 ---
 
-💻 *Maintained with dedication by [Harsh Pratap Singh Rathore](https://github.com/harsh-pratap-singh-rathore)*
+<div align="center">
+  <h3>🔥 I DIDNT END HERE | HERE I START ! 🔥</h3>
+  <p><b>From Zero to Full MERN Stack Mastery</b></p>
+  <i>Maintained with dedication by <a href="https://github.com/harsh-pratap-singh-rathore">Harsh Pratap Singh Rathore</a></i>
+</div>
